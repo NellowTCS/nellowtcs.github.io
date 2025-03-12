@@ -42,86 +42,32 @@ This is the main page of your web app, which includes:
 * Add `<button id="install-button" hidden>Install App</button>` (the (initially hidden) install app button) somewhere (your choice) in your \<div>.
 * Add the below \<script> <span style="text-decoration:underline">_above_</span> your main \<script>.
   ```html
-  <script>
-      document.addEventListener("DOMContentLoaded", function() {
-          // Register the service worker
-          if ("serviceWorker" in navigator) {
-              navigator.serviceWorker.register("service-worker.js");
-          }
-
-          let deferredPrompt;
-          const installButton = document.getElementById("install-button");
-
-          // Listen for the install prompt
-          window.addEventListener("beforeinstallprompt", (e) => {
-              e.preventDefault();
-              deferredPrompt = e;
-              installButton.hidden = false;
-          });
-
-          // Handle install button click
-          installButton.addEventListener("click", async () => {
-              const isStandalone = window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone;
-
-              if (isStandalone) {
-                  console.log("App is already installed");
-                  return;
-              }
-
-              if (deferredPrompt) {
-                  deferredPrompt.prompt();
-                  const { outcome } = await deferredPrompt.userChoice;
-                  deferredPrompt = null;
-                  console.log(outcome === "accepted" ? "User accepted install prompt" : "User dismissed install prompt");
-              } else {
-                  if (window.matchMedia("(display-mode: browser)").matches) {
-                      window.location.assign("chrome://apps/");
-                  }
-              }
-          });
-      });
-  </script>
-  ```
-Below is an example `index.html` file:</br>
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My PWA</title>
-    <link rel="manifest" href="manifest.json">
-</head>
-<body>
-    <h1>Welcome to My Web App</h1>
-    <button id="install-button" hidden>Install App</button>
-
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             // Register the service worker
             if ("serviceWorker" in navigator) {
                 navigator.serviceWorker.register("service-worker.js");
             }
-
+  
             let deferredPrompt;
             const installButton = document.getElementById("install-button");
-
+  
             // Listen for the install prompt
             window.addEventListener("beforeinstallprompt", (e) => {
                 e.preventDefault();
                 deferredPrompt = e;
                 installButton.hidden = false;
             });
-
+  
             // Handle install button click
             installButton.addEventListener("click", async () => {
                 const isStandalone = window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone;
-
+  
                 if (isStandalone) {
                     console.log("App is already installed");
                     return;
                 }
-
+  
                 if (deferredPrompt) {
                     deferredPrompt.prompt();
                     const { outcome } = await deferredPrompt.userChoice;
@@ -135,12 +81,66 @@ Below is an example `index.html` file:</br>
             });
         });
     </script>
-
-    <script>
-        // Your main script
-    </script>
-</body>
-</html>
+  ```
+Below is an example `index.html` file:
+```html
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>My PWA</title>
+      <link rel="manifest" href="manifest.json">
+  </head>
+  <body>
+      <h1>Welcome to My Web App</h1>
+      <button id="install-button" hidden>Install App</button>
+  
+      <script>
+          document.addEventListener("DOMContentLoaded", function() {
+              // Register the service worker
+              if ("serviceWorker" in navigator) {
+                  navigator.serviceWorker.register("service-worker.js");
+              }
+  
+              let deferredPrompt;
+              const installButton = document.getElementById("install-button");
+  
+              // Listen for the install prompt
+              window.addEventListener("beforeinstallprompt", (e) => {
+                  e.preventDefault();
+                  deferredPrompt = e;
+                  installButton.hidden = false;
+              });
+  
+              // Handle install button click
+              installButton.addEventListener("click", async () => {
+                  const isStandalone = window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone;
+  
+                  if (isStandalone) {
+                      console.log("App is already installed");
+                      return;
+                  }
+  
+                  if (deferredPrompt) {
+                      deferredPrompt.prompt();
+                      const { outcome } = await deferredPrompt.userChoice;
+                      deferredPrompt = null;
+                      console.log(outcome === "accepted" ? "User accepted install prompt" : "User dismissed install prompt");
+                  } else {
+                      if (window.matchMedia("(display-mode: browser)").matches) {
+                          window.location.assign("chrome://apps/");
+                      }
+                  }
+              });
+          });
+      </script>
+  
+      <script>
+          // Your main script
+      </script>
+  </body>
+  </html>
 ```
 
 ---
