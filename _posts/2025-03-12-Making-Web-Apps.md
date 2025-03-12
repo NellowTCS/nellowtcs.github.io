@@ -82,7 +82,7 @@ This is the main page of your web app, which includes:
       });
   </script>
   ```
-Below is an example `index.html` file:
+Below is an example `index.html` file:</br>
 ```html
 <!DOCTYPE html>
 <html lang="en">
