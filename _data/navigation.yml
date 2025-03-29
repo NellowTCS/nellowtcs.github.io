@@ -4,9 +4,13 @@ main:
     classes: wide
   - title: "Projects"
     url: /projects/
+    classes: wide
   - title: "Categories"
     url: /categories/
+    classes: wide
   - title: "Tags"
     url: /tags/
+    classes: wide
   - title: "About"
     url: /about/
+    classes: wide
