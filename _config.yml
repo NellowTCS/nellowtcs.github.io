@@ -14,7 +14,6 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: NellowTCS
-max-width: calc(100vw - 200px);
 email: nellowtcs@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   My homepage and blog!
@@ -76,10 +75,10 @@ footer:
 
 defaults:
   # _posts
-  max-width: calc(100vw - 200px);
   - scope:
       path: ""
       type: posts
+      max-width: calc(100vw - 200px);
     values:
       layout: single
       author_profile: true
@@ -91,6 +90,7 @@ defaults:
   - scope:
       path: "_pages"
       type: pages
+      max-width: calc(100vw - 200px);
     values:
       layout: single
       author_profile: true
