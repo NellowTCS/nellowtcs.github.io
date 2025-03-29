@@ -1,6 +1,7 @@
 main:
   - title: "Posts"
     url: /posts/
+    classes: wide
   - title: "Projects"
     url: /projects/
   - title: "Categories"
