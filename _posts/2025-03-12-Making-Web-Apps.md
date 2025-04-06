@@ -2,7 +2,7 @@
 title: "Making Progressive Web Apps Quickly"
 date: 2025-03-12T13:19:00-06:00
 categories:
-  - blog
+  - guide
 tags:
   - HTML
   - Web Apps
