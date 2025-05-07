@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  background-color: #fdfdfd;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.site-header {
+  background: #f8f8f8;
+  border-bottom: 1px solid #eaeaea;
+  padding: 1rem 0;
+}
+
+.site-title {
+  font-family: 'Merriweather', serif;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.site-nav .nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+  display: flex;
+  gap: 1.25rem;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: #0366d6;
+  transition: color 0.2s;
+}
+
+.site-nav a:hover {
+  color: #d63384;
+}
+
+.content {
+  margin-top: 2rem;
+}
+
+.project {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.project h2 {
+  font-family: 'Merriweather', serif;
+  color: #111;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #fff;
+  background-color: #0366d6;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #024c9d;
+}
+
+.site-footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  border-top: 1px solid #eaeaea;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
