@@ -146,7 +146,7 @@ Below is an example `index.html` file:
 ---
 
 ## 3) **Setting Up the Service Worker**
-The **service worker** caches important files and serves them when offline. Modify this if you need custom caching behavior.
+The **service worker** caches important files and serves them when offline. Modify this if you need custom caching behavior. Note: The `"/"` and `"/index.html"` should be pointing to your root directory and index.html, if you are using GitHub Pages or have a subdomain, you may need to change those two.
 
 ### **service-worker.js**
 ```js
