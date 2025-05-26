@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HTMLNotes is a lightweight, web-based note-taking app built with HTML, CSS, and JavaScript by NellowTCS.">
+    <meta name="keywords" content="HTMLNotes, note-taking, web app, Markdown, NellowTCS, TinyMDE, JavaScript">
+    <meta name="author" content="NellowTCS">
+    <!-- Open Graph -->
+    <meta property="og:title" content="HTMLNotes by NellowTCS">
+    <meta property="og:description" content="A lightweight, web-based note-taking application with Markdown support and drag-and-drop functionality.">
+    <meta property="og:image" content="https://github.com/user-attachments/assets/81357ff2-6931-4d13-9f5f-1ada0cfa449b">
+    <meta property="og:url" content="https://nellowtcs.github.io/HTMLNotes/">
+    <meta property="og:type" content="website">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="HTMLNotes by NellowTCS">
+    <meta name="twitter:description" content="A lightweight, web-based note-taking application with Markdown support and drag-and-drop functionality.">
+    <meta name="twitter:image" content="https://github.com/user-attachments/assets/81357ff2-6931-4d13-9f5f-1ada0cfa449b">
+    <link rel="icon" type="image/png" href="https://nellowtcs.github.io/HTMLNotes/favicon.png">
+    <title>About HTMLNotes - NellowTCS</title>
+    <style>
+        :root {
+            --bg-color: #fff;
+            --text-color: #333;
+            --header-bg: #2c3e50;
+            --link-color: #3498db;
+            --card-bg: #f9f9f9;
+            --shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        [data-theme="dark"] {
+            --bg-color: #1a1a1a;
+            --text-color: #e0e0e0;
+            --header-bg: #34495e;
+            --card-bg: #2c2c2c;
+            --link-color: #66b0ff;
+            --shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            transition: all 0.3s ease;
+        }
+        header {
+            background-color: var(--header-bg);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        section {
+            margin-bottom: 3rem;
+        }
+        h2 {
+            color: var(--header-bg);
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--link-color);
+            padding-bottom: 0.5rem;
+        }
+        p, ul, li {
+            font-size: 1rem;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 2rem;
+        }
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--link-color);
+            color: white;
+            border-radius: 5px;
+            margin: 0.5rem 0;
+        }
+        .button:hover {
+            background-color: #2980b9;
+            text-decoration: none;
+        }
+        .screenshots, .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .screenshots img, .gallery img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .gallery figure {
+            margin: 0;
+            text-align: center;
+            max-width: 280px;
+        }
+        .gallery figcaption {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background-color: var(--card-bg);
+        }
+        th, td {
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: var(--header-bg);
+            color: white;
+        }
+        .dependency {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .dependency img {
+            height: 50px;
+            width: auto;
+        }
+        .theme-toggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-color);
+        }
+        .loader {
+            display: none;
+            border: 4px solid var(--text-color);
+            border-top: 4px solid var(--link-color);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 1rem auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .gallery img:not([src]) + .loader {
+            display: block;
+        }
+        footer {
+            background-color: var(--card-bg);
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            .screenshots img, .gallery img {
+                max-width: 100%;
+            }
+            .gallery figure {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" aria-label="Switch to dark theme" onclick="toggleTheme()">🌙</button>
+    <header>
+        <h1>HTMLNotes</h1>
+        <p>A lightweight, web-based note-taking application built with HTML, CSS, and JavaScript made by <a href="https://github.com/NellowTCS">NellowTCS</a>.</p>
+        <p>
+            <a href="https://nellowtcs.github.io/HTMLNotes/" class="button" target="_blank">Live Demo</a>
+            <a href="https://github.com/NellowTCS/HTMLNotes/releases/download/v1.0.0/HTMLNotes.html" class="button" target="_blank">Download v1.0.0</a>
+        </p>
+    </header>
+
+    <main role="main">
+        <section>
+            <h2>About HTMLNotes</h2>
+            <p>
+                HTMLNotes is a lightweight, web-based note-taking application delivered as a single HTML file, built with HTML, CSS, and JavaScript. It leverages <a href="https://github.com/nextapps-de/tinymde" target="_blank">TinyMDE</a> for rich Markdown editing and <a href="https://fontawesome.com/" target="_blank">Font Awesome</a> for a polished, icon-driven interface. Users can create, manage, and organize notes with a clean, intuitive design. Features include a toggleable sidebar, note creation, export/import capabilities in JSON and Markdown formats, and note deletion. It uses <a href="https://interactjs.io/" target="_blank">Interact.js</a> for drag-and-drop functionality and <a href="https://highlightjs.org/" target="_blank">Highlight.js</a> for syntax highlighting.
+            </p>
+            <p>
+                Perfect for students, professionals, and anyone needing a portable tool for jotting down ideas, HTMLNotes runs entirely in the browser with no server-side dependencies, making it ideal for offline use.
+            </p>
+        </section>
+
+        <section>
+            <h2>Features</h2>
+            <ul>
+                <li><strong>Create and Manage Notes</strong>: Easily create new notes and view all or recent notes via the sidebar.</li>
+                <li><strong>Rich Markdown Editing</strong>: Powered by TinyMDE for seamless Markdown support with live preview.</li>
+                <li><strong>Export Notes</strong>: Export notes as JSON or Markdown for sharing or backup.</li>
+                <li><strong>Import Notes</strong>: Import notes to restore or share content.</li>
+                <li><strong>Delete Notes</strong>: Remove unwanted notes with a single click.</li>
+                <li><strong>Responsive Sidebar</strong>: Toggle the sidebar for a distraction-free experience.</li>
+                <li><strong>Icon-Driven UI</strong>: Enhanced with Font Awesome icons for intuitive navigation.</li>
+                <li><strong>Real-Time Saving</strong>: Notes are saved automatically as you type using local storage.</li>
+                <li><strong>Browser Compatibility</strong>: Works in modern browsers like Chrome, Firefox, Edge, and Safari.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Gallery</h2>
+            <div class="gallery">
+                <figure>
+                    <img src="https://github.com/user-attachments/assets/81357ff2-6931-4d13-9f5f-1ada0cfa449b" alt="Editor Screenshot" width="400" loading="lazy">
+                    <div class="loader"></div>
+                    <figcaption>Editor</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://github.com/user-attachments/assets/7a90a8b8-0260-432e-9b9b-305433bccfe8" alt="New Note Screenshot" width="400" loading="lazy">
+                    <div class="loader"></div>
+                    <figcaption>New Note</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://github.com/user-attachments/assets/8e5fab02-c798-402f-bbf2-23da03980a6a" alt="Exporting Screenshot" width="400" loading="lazy">
+                    <div class="loader"></div>
+                    <figcaption>Exporting</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section>
+            <h2>Getting Started</h2>
+            <h3>Option 1: Use Online</h3>
+            <p>
+                1. Visit the <a href="https://nellowtcs.github.io/HTMLNotes/" target="_blank">Live Demo</a>.<br>
+                2. Drag elements from the tools panel to the canvas.<br>
+                3. Edit code in the HTML, CSS, or JavaScript tabs.<br>
+                4. Save or export your project using the toolbar.
+            </p>
+            <h3>Option 2: Run Locally</h3>
+            <p>
+                1. Download <a href="https://github.com/NellowTCS/HTMLNotes/releases/download/v1.0.0/HTMLNotes.html" target="_blank">HTMLNotes.html</a> from the <a href="https://github.com/NellowTCS/HTMLNotes/releases/" target="_blank">Releases page</a>.<br>
+                2. Open the file in a modern browser (Chrome, Firefox, Edge).<br>
+                3. Start using the editor.
+            </p>
+            <h3>Option 3: Clone and Customize</h3>
+            <p>
+                1. Clone the repository:
+                <pre><code>git clone https://github.com/NellowTCS/HTMLNotes.git</code></pre>
+                2. Open <code>index.html</code> in a browser or serve it locally (e.g., <code>npx serve</code>).<br>
+                3. Modify the code to customize the editor.
+            </p>
+            <h3>Browser Compatibility</h3>
+            <p>
+                HTMLNotes is optimized for modern browsers (Chrome, Firefox, Edge, Safari). However, some things may not work in (much) older browsers.
+            </p>
+        </section>
+
+        <section>
+            <h2>Usage</h2>
+            <h3>Creating a Note</h3>
+            <p>
+                Click the "New Note" button in the sidebar to start a new note. Use the TinyMDE editor to write and format content in Markdown, with auto-saving enabled.
+            </p>
+            <h3>Managing Notes</h3>
+            <p>
+                Use the sidebar to view "All Notes" or "Recent" notes. Select a note to edit or view its content.
+            </p>
+            <h3>Exporting/Importing Notes</h3>
+            <p>
+                Export notes as JSON or Markdown via the "Export Note" dropdown for sharing or backup. Import previously exported notes using the "Import Note" button.
+            </p>
+            <h3>Deleting Notes</h3>
+            <p>
+                Select a note and click "Delete Note" to remove it.
+            </p>
+        </section>
+
+        <section>
+            <h2>Dependencies</h2>
+            <div class="dependency">
+                <p><a href="https://jefago.github.io/tiny-markdown-editor" target="_blank"</a>TinyMDE</a> - Markdown Editing</p>
+            </div>
+            <div class="dependency">
+                <img src="https://fontawesome.com/favicon.ico" alt="Highlight.js logo">
+                <p><a href="https://fontawesome.com/" target="_blank">Font Awesome</a> - Icons</p>
+            </div>
+            <p>No server-side dependencies; runs entirely in the browser.</p>
+        </section>
+
+        <section>
+            <h2>Contributing</h2>
+            <p>
+                Contributions are welcome! To contribute:<br>
+                1. Fork the repository.<br>
+                2. Create a feature branch (<code>git checkout -b feature/new-feature</code>).<br>
+                3. Commit your changes (<code>git commit -m "Add new feature"</code>).<br>
+                4. Push to the branch (<code>git push origin feature/new-feature</code>).<br>
+                5. Open a Pull Request.
+            </p>
+            <p>
+                Report bugs or request features via the <a href="https://github.com/NellowTCS/HTMLNotes/issues" target="_blank">Issues page</a>.
+            </p>
+        </section>
+
+        <section>
+            <h2>License</h2>
+            <p>
+                HTMLNotes is licensed under the GNU General Public License v3.0. See the <a href="https://github.com/NellowTCS/HTMLNotes/blob/main/LICENSE" target="_blank">LICENSE</a> file for details.
+            </p>
+        </section>
+
+        <section>
+            <h2>Acknowledgements</h2>
+            <p>
+                Built by <a href="https://github.com/NellowTCS" target="_blank">NellowTCS</a>.<br>
+                Powered by <a href="https://jefago.github.io/tiny-markdown-editor/" target="_blank">TinyMDE</a>.<br>
+                Inspired by Obsidian.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            © 2025 <a href="https://github.com/NellowTCS" target="_blank">NellowTCS</a> | 
+            <a href="https://github.com/NellowTCS/HTMLNotes" target="_blank">HTMLNotes on GitHub</a> | 
+            <a href="https://nellowtcs.github.io/" target="_blank">Home</a>
+        </p>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme') || 'light';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            body.setAttribute('data-theme', newTheme);
+            try {
+                localStorage.setItem('theme', newTheme);
+            } catch (e) {
+                console.warn('localStorage not available:', e);
+            }
+            const button = document.querySelector('.theme-toggle');
+            button.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            button.setAttribute('aria-label', `Switch to ${newTheme === 'dark' ? 'light' : 'dark'} theme`);
+        }
+
+        try {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.body.setAttribute('data-theme', savedTheme);
+            document.querySelector('.theme-toggle').textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+            document.querySelector('.theme-toggle').setAttribute('aria-label', `Switch to ${savedTheme === 'dark' ? 'light' : 'dark'} theme`);
+        } catch (e) {
+            console.warn('localStorage not available:', e);
+            document.body.setAttribute('data-theme', 'light');
+        }
+    </script>
+</body>
+</html>
