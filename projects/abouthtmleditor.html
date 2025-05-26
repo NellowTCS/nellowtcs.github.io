@@ -4,6 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About HTMLEditor - NellowTCS</title>
+    <link rel="icon" type="image/png" href="https://nellowtcs.github.io/HTMLEditor/favicon.png">
+    <meta name="description" content="HTMLEditor is a lightweight, web-based HTML editor by NellowTCS, built with HTML, CSS, and JavaScript, featuring drag-and-drop interface building and real-time code editing.">
+    <meta name="keywords" content="HTMLEditor, web editor, HTML, CSS, JavaScript, NellowTCS, drag-and-drop, Interact.js, Highlight.js">
+    <meta name="author" content="NellowTCS">
+    <meta name="robots" content="index, follow">
+    <!-- Open Graph -->
+    <meta property="og:title" content="HTMLEditor by NellowTCS">
+    <meta property="og:description" content="A lightweight, web-based HTML editor with drag-and-drop functionality for creating and editing web interfaces in real-time.">
+    <meta property="og:image" content="https://github.com/user-attachments/assets/09ba795b-fad9-4e20-a06a-89a8568eeb56">
+    <meta property="og:url" content="https://nellowtcs.github.io/HTMLEditor/">
+    <meta property="og:type" content="website">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="HTMLEditor by NellowTCS">
+    <meta name="twitter:description" content="A lightweight, web-based HTML editor with drag-and-drop functionality for creating and editing web interfaces in real-time.">
+    <meta name="twitter:image" content="https://github.com/user-attachments/assets/09ba795b-fad9-4e20-a06a-89a8568eeb56">
     <style>
         :root {
             --bg-color: #fff;
@@ -208,27 +224,27 @@
             <h2>Gallery</h2>
             <div class="gallery">
                 <figure>
-                    <img src="https://github.com/user-attachments/assets/206b0c2e-705d-4ea1-89c0-02c6568a7744" alt="Light Theme Screenshot" width="400">
+                    <img src="https://github.com/user-attachments/assets/206b0c2e-705d-4ea1-89c0-02c6568a7744" alt="Light Theme Screenshot" width="400" loading="lazy" />
                     <figcaption>Light Mode</figcaption>
                 </figure>
                 <figure>
-                    <img src="https://github.com/user-attachments/assets/bbf73206-83ca-45bd-b221-6b0f9ce20aa0" alt="Dark Theme Screenshot" width="400">
+                    <img src="https://github.com/user-attachments/assets/bbf73206-83ca-45bd-b221-6b0f9ce20aa0" alt="Dark Theme Screenshot" width="400" loading="lazy" />
                     <figcaption>Dark Mode</figcaption>
                 </figure>
                 <figure>
-                    <img src="https://github.com/user-attachments/assets/09ba795b-fad9-4e20-a06a-89a8568eeb56" alt="Editor Screenshot" width="400">
+                    <img src="https://github.com/user-attachments/assets/09ba795b-fad9-4e20-a06a-89a8568eeb56" alt="Editor Screenshot" width="400" loading="lazy" />
                     <figcaption>HTMLEditor</figcaption>
                 </figure>
                 <figure>
-                    <img width="1280" alt="Keyboard Shortcuts" src="https://github.com/user-attachments/assets/6da1aac0-1591-44de-8180-e196e088f9c2" />
+                    <img width="1280" alt="Keyboard Shortcuts" src="https://github.com/user-attachments/assets/6da1aac0-1591-44de-8180-e196e088f9c2" loading="lazy" />
                     <figcaption>Keyboard Shortcuts</figcaption>
                 </figure>
                 <figure>
-                    <img width="1280" alt="Properties Menu" src="https://github.com/user-attachments/assets/4416e784-efc2-4f98-a6d9-339afcda84e9" />
+                    <img width="1280" alt="Properties Menu" src="https://github.com/user-attachments/assets/4416e784-efc2-4f98-a6d9-339afcda84e9" loading="lazy"/>
                     <figcaption>Properties Menu</figcaption>
                 </figure>
                 <figure>
-                    <img width="1280" alt="Placing Stuff" src="https://github.com/user-attachments/assets/d5c2f678-45af-40a3-b59b-193343d3635b" />
+                    <img width="1280" alt="Placing Stuff" src="https://github.com/user-attachments/assets/d5c2f678-45af-40a3-b59b-193343d3635b" loading="lazy"/>
                     <figcaption>Placing Stuff</figcaption>
                 </figure>
             </div>
@@ -278,11 +294,11 @@
         <section>
             <h2>Dependencies</h2>
             <div class="dependency">
-                <img src="https://c4d6f7d727e094887e93-4ea74b676357550bd514a6a5b344c625.ssl.cf2.rackcdn.com/ijs-solid.svg" alt="Interact.js">
+                <img src="https://c4d6f7d727e094887e93-4ea74b676357550bd514a6a5b344c625.ssl.cf2.rackcdn.com/ijs-solid.svg" alt="Interact.js" loading="lazy">
                 <p><a href="https://interactjs.io/" target="_blank">Interact.js</a> - Drag-and-drop and resizing functionality</p>
             </div>
             <div class="dependency">
-                <img src="https://github.com/highlightjs/highlightjs.org/raw/d142d7eba85c3725548287bf5088d59cedf66bdb/public/icon.png" alt="Highlight.js">
+                <img src="https://github.com/highlightjs/highlightjs.org/raw/d142d7eba85c3725548287bf5088d59cedf66bdb/public/icon.png" alt="Highlight.js" loading="lazy">
                 <p><a href="https://highlightjs.org/" target="_blank">Highlight.js</a> - Syntax highlighting for code editors</p>
             </div>
             <p>No server-side dependencies; runs entirely in the browser.</p>
@@ -331,13 +347,30 @@
     <script>
         function toggleTheme() {
             const body = document.body;
-            const currentTheme = body.getAttribute('data-theme');
-            body.setAttribute('data-theme', currentTheme === 'dark' ? 'light' : 'dark');
-            localStorage.setItem('theme', body.getAttribute('data-theme'));
+            const currentTheme = body.getAttribute('data-theme') || 'light';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            body.setAttribute('data-theme', newTheme);
+            try {
+                localStorage.setItem('theme', newTheme);
+            } catch (e) {
+                console.warn('localStorage not available:', e);
+            }
+            // Update button text/icon
+            const button = document.querySelector('.theme-toggle');
+            button.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            button.setAttribute('aria-label', `Switch to ${newTheme === 'dark' ? 'light' : 'dark'} theme`);
         }
+    
         // Load saved theme
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        document.body.setAttribute('data-theme', savedTheme);
+        try {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.body.setAttribute('data-theme', savedTheme);
+            document.querySelector('.theme-toggle').textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+            document.querySelector('.theme-toggle').setAttribute('aria-label', `Switch to ${savedTheme === 'dark' ? 'light' : 'dark'} theme`);
+        } catch (e) {
+            console.warn('localStorage not available:', e);
+            document.body.setAttribute('data-theme', 'light');
+        }
     </script>
 </body>
 </html>
