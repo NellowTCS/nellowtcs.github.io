@@ -12,12 +12,15 @@ tags:
 
 This script helps automatically progress through pages on [drivered.com](https://drivered.com) by monitoring the "Next" button and clicking it as soon as the timer allows it.
 
-There are two versions included:
+There are three versions included:
 
 - **Bookmarklet** – Clickable from your bookmarks bar.
 - **Console Script** – Paste into the browser console.
+- **Userscript** – For use with a userscript manager like Tampermonkey or ScriptCat.
 
-Both versions observe the timer and automatically click the “Next” button when enabled.
+The first two versions observe the timer and automatically click the “Next” button when enabled. These, due to limitations of bookmarklets and the console, don't work after the first "click" to the next page. 
+
+The userscript version however, runs continuously and will keep clicking the "Next" button as long as the page is open.
 
 ---
 
@@ -92,8 +95,84 @@ Clicking it stops the auto-clicker and removes the button from the screen.
 })();
 ```
 
-Paste above code into your browser's developer console and press Enter.  
+Paste the above code into your browser's developer console and press Enter.  
 It adds the same Stop button and functionality as the bookmarklet.
+
+### Userscript
+```javascript
+// ==UserScript==
+// @name         DriversEd Auto-Next with Stop Button
+// @namespace    https://driversed.com/
+// @version      1.0.1
+// @description  Auto-click the "Next" button when timer ends, with a Stop button to cancel auto-clicking.
+// @author       NellowTCS
+// @match        https://app.driversed.com/*
+// @grant        none
+// @run-at       document-idle
+// @license      MIT
+// ==/UserScript==
+ 
+(function () {
+  'use strict';
+ 
+  function waitAndClickNext() {
+    const btn = document.getElementById('arrow-next');
+    if (!btn) {
+      console.warn('Next button not found, retrying...');
+      setTimeout(waitAndClickNext, 500);
+      return;
+    }
+ 
+    const observer = new MutationObserver(() => {
+      if (!btn.disabled) {
+        console.log('Next button enabled! Clicking now...');
+        btn.click();
+        observer.disconnect();
+        removeStopButton();
+      }
+    });
+ 
+    observer.observe(btn, { attributes: true, attributeFilter: ['disabled'] });
+    console.log('Waiting for button to be enabled...');
+ 
+    if (!document.getElementById('stop-auto-next')) {
+      const stopBtn = document.createElement('button');
+      stopBtn.id = 'stop-auto-next';
+      stopBtn.textContent = 'Stop Auto-Next';
+      stopBtn.style.position = 'fixed';
+      stopBtn.style.bottom = '20px';
+      stopBtn.style.right = '20px';
+      stopBtn.style.zIndex = 10000;
+      stopBtn.style.background = '#ff4d4d';
+      stopBtn.style.color = '#fff';
+      stopBtn.style.border = 'none';
+      stopBtn.style.padding = '10px 14px';
+      stopBtn.style.borderRadius = '6px';
+      stopBtn.style.cursor = 'pointer';
+      stopBtn.style.fontSize = '14px';
+      stopBtn.style.boxShadow = '0 2px 6px rgba(0,0,0,0.2)';
+ 
+      stopBtn.onclick = () => {
+        observer.disconnect();
+        console.log('Auto-clicker stopped manually.');
+        removeStopButton();
+      };
+ 
+      document.body.appendChild(stopBtn);
+    }
+ 
+    function removeStopButton() {
+      const existing = document.getElementById('stop-auto-next');
+      if (existing) existing.remove();
+    }
+  }
+ 
+  waitAndClickNext();
+})();
+```
+
+The script is also on GreasyFork: [DriversEd Auto-Next with Stop Button](https://greasyfork.org/en/scripts/544171-drivered-auto-next-with-stop-button)
+Install this script using a userscript manager like [Tampermonkey](https://www.tampermonkey.net/) or [ScriptCat](https://scriptcat.org/).
 
 ---
 
