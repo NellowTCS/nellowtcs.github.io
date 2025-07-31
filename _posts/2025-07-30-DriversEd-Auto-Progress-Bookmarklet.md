@@ -8,9 +8,9 @@ tags:
   - JavaScript
 ---
 
-# DriverEd Auto-Progress Script
+# DriversEd Auto-Progress Script
 
-This script helps automatically progress through pages on [drivered.com](https://drivered.com) by monitoring the "Next" button and clicking it as soon as the timer allows it.
+This script helps automatically progress through pages on [driversed.com](https://driversed.com) by monitoring the "Next" button and clicking it as soon as the timer allows it.
 
 There are three versions included:
 
@@ -35,7 +35,7 @@ javascript:(function(){const w=()=>{const b=document.getElementById('arrow-next'
 1. Copy the minified code from above.
 2. Create a new bookmark.
 3. Paste the code into the bookmark’s **URL** field.
-4. While on a DriverEd page, click the bookmark.
+4. While on a DriversEd page, click the bookmark.
 
 A red **“Stop Auto-Next”** button will appear in the bottom-right corner.  
 Clicking it stops the auto-clicker and removes the button from the screen.
@@ -171,7 +171,7 @@ It adds the same Stop button and functionality as the bookmarklet.
 })();
 ```
 
-The script is also on GreasyFork: [DriversEd Auto-Next with Stop Button](https://greasyfork.org/en/scripts/544171-drivered-auto-next-with-stop-button)  
+The script is also on GreasyFork: [DriversEd Auto-Next with Stop Button](https://greasyfork.org/en/scripts/544171-driversed-auto-next-with-stop-button)  
 Install this script using a userscript manager like [Tampermonkey](https://www.tampermonkey.net/) or [ScriptCat](https://scriptcat.org/).
 
 ---
