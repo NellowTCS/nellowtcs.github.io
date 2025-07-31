@@ -171,7 +171,7 @@ It adds the same Stop button and functionality as the bookmarklet.
 })();
 ```
 
-The script is also on GreasyFork: [DriversEd Auto-Next with Stop Button](https://greasyfork.org/en/scripts/544171-drivered-auto-next-with-stop-button)
+The script is also on GreasyFork: [DriversEd Auto-Next with Stop Button](https://greasyfork.org/en/scripts/544171-drivered-auto-next-with-stop-button)  
 Install this script using a userscript manager like [Tampermonkey](https://www.tampermonkey.net/) or [ScriptCat](https://scriptcat.org/).
 
 ---
