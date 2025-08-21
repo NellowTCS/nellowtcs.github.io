@@ -50,7 +50,7 @@ Suddenly the menu flows naturally into the interface instead of just sitting on 
 ## The GitHub Repository
 
 * Want to see something concrete? Well, maybe not concrete, it's still a work in progress, but I decided to make a repository for this.
-* Check it out here: https://github.com/NellowTCS/Curvomorphism/
+* Check it out here: [https://github.com/NellowTCS/Curvomorphism/](https://github.com/NellowTCS/Curvomorphism/)
 
 
 ## Real-World Applications
