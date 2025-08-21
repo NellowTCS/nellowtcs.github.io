@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Redirecting...</title>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #2196F3, #21CBF3);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .container {
+        position: relative;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 40px 30px;
+        border-radius: 0 25px 25px 0;
+        box-shadow: 4px 4px 20px rgba(0,0,0,0.2);
+        max-width: 600px;
+        width: 90%;
+        height: auto;
+        margin-left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        animation: float 3s ease-in-out infinite;
+    }
+
+    .corner-widget {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 24px;
+        height: 24px;
+        background: #007acc;
+        color: #fff;
+        font-weight: bold;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        font-size: 16px;
+        transition: transform 0.2s;
+    }
+
+    .corner-widget:hover {
+        transform: scale(1.2);
+    }
+
+    .about-me {
+        position: absolute;
+        top: 40px;
+        right: 10px;
+        background: #ffffff;
+        color: #1a1a1a;
+        border: 1px solid #007acc;
+        border-radius: 8px;
+        padding: 15px;
+        width: 220px;
+        font-size: 0.85rem;
+        box-shadow: 2px 2px 15px rgba(0,0,0,0.2);
+        display: none;
+        z-index: 10;
+    }
+
+    .corner-widget:hover + .about-me {
+        display: block;
+    }
+
+    .about-me a {
+        color: #007acc;
+        text-decoration: none;
+    }
+
+    .about-me a:hover {
+        text-decoration: underline;
+    }
+
+    h1 {
+        margin-bottom: 10px;
+        font-size: 1.8rem;
+        color: #1a1a1a;
+    }
+
+    .notice {
+        font-size: 0.9rem;
+        color: #1a1a1a;
+        margin-bottom: 15px;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.4;
+        color: #1a1a1a;
+    }
+
+    .loader {
+        margin-top: 25px;
+        border: 5px solid rgba(0, 0, 0, 0.1);
+        border-top: 5px solid #007acc;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        animation: spin 1s linear infinite;
+    }
+
+    .fallback {
+        margin-top: 20px;
+        font-size: 0.9rem;
+    }
+
+    .fallback a {
+        color: #007acc;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .fallback a:hover {
+        text-decoration: underline;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-5px); }
+    }
+</style>
+<script>
+    function dynamicRedirect(delay = 5000) {
+        const oldHost = "nellowtcs.github.io";
+        const newHost = "htmltoolkit.github.io";
+        let newUrl = "";
+
+        if (window.location.hostname === oldHost) {
+            const path = window.location.pathname;
+            newUrl = `https://${newHost}${path}`;
+            setTimeout(() => {
+                window.location.href = newUrl;
+            }, delay);
+        }
+
+        // Update fallback link text
+        const fallbackLink = document.getElementById("fallback-link");
+        if (fallbackLink) {
+            fallbackLink.href = newUrl || "#";
+            fallbackLink.textContent = newUrl || "the new site";
+        }
+    }
+</script>
+</head>
+<body>
+<div class="container">
+    <div class="corner-widget" title="About Me">i</div>
+    <div class="about-me">
+        <strong>NellowTCS</strong><br>
+        A developer skilled in JS, HTML, CSS, PCB Design, CAD (moderate), C (basic), C++ (basic).<br><br>
+        <a href="https://nellowtcs.github.io/" target="_blank">Website</a><br>
+        <a href="https://discordapp.com/users/804770676627341382" target="_blank">Discord</a><br>
+        <a href="https://github.com/NellowTCS" target="_blank">GitHub</a>
+    </div>
+
+    <h1>Notice:</h1>
+    <div class="notice">
+        The HTML… series has moved to a new home for better organization. However, I'm still the main creator. Please update your bookmarks to continue following along!
+    </div>
+    <p>Please wait while you are redirected...</p>
+    
+    <div class="loader"></div>
+
+    <div class="fallback">
+        Redirect not working? Click to go to <a id="fallback-link" href="#">here</a>.
+    </div>
+</div>
+
+<script>
+    dynamicRedirect(5000);
+</script>
+</body>
+</html>
