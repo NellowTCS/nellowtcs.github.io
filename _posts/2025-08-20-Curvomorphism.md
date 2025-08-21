@@ -8,8 +8,6 @@ tags:
   - My Projects
 ---
 
-# Why Rounded UIs are Becoming Stale (And How Curvomorphism Fixes It)
-
 *A new way to think about rounded corners :D*
 
 Remember when iOS 7 came out and suddenly everyone was obsessedddd with rounded corners? We went from sharp edges to soft, rounded edges overnight. But honestly, we’ve been doing it slightly wrong.

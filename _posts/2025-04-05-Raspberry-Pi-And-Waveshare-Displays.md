@@ -7,6 +7,7 @@ tags:
   - Guide
   - Raspberry Pi
 ---
+
 A guide to adding touchscreen support for any Waveshare touchscreen display to various OSes.
 
 This apparently works on any OS with a /boot/firmware/config.txt, or if the OS is _very_ old, /boot/config.txt, but I have yet to check every single OS, for obvious reasons.

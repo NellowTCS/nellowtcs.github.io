@@ -8,8 +8,6 @@ tags:
   - JavaScript
 ---
 
-# DriversEd Auto-Progress Script
-
 This script helps automatically progress through pages on [driversed.com](https://driversed.com) by monitoring the "Next" button and clicking it as soon as the timer allows it.
 
 There are three versions included:

@@ -8,8 +8,6 @@ tags:
   - Web Apps
 ---
 
-# Guide: Making Progressive Web Apps Quickly
-
 This guide walks you through creating a **Progressive Web App (PWA)** with a custom install button. The app will:
 - Use a **service worker** to cache files for offline use.
 - Provide an **additional install button** for adding the app to a device's home screen.
