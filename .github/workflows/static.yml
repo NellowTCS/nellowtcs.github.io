@@ -39,13 +39,8 @@ jobs:
         run: npm run postbuild
 
       - name: Build Histoire stories
-        run: npm run story:build
-
-      - name: Move Histoire stories to /stories
-        run: |
-          mkdir -p build/stories
-          mv .histoire/dist/* build/stories/
-
+        run: npx histoire build --outDir build/stories
+        
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
