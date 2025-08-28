@@ -39,7 +39,7 @@ jobs:
         run: npm run postbuild
 
       - name: Build Histoire stories
-        run: npx histoire build --outDir build/stories
+        run: npx histoire build
         
       - name: Setup Pages
         uses: actions/configure-pages@v5
