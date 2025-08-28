@@ -3,6 +3,7 @@ import { HstSvelte } from '@histoire/plugin-svelte';
 
 export default defineConfig({
   base: '/stories/',
+  outDir: 'build/stories',
   plugins: [HstSvelte()],
   theme: {
     title: 'Histoire',
