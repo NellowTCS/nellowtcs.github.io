@@ -44,7 +44,7 @@ jobs:
       - name: Move Histoire stories to /stories
         run: |
           mkdir -p build/stories
-          mv .histoire/* build/stories/
+          mv .histoire/dist/* build/stories/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
