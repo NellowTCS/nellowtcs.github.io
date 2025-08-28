@@ -1,4 +1,4 @@
-name: Deploy SvelteKit static site to Pages
+name: Deploy SvelteKit static site + Histoire to Pages
 
 on:
   push:
@@ -30,7 +30,7 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build SvelteKit site
         run: npm run build
@@ -38,13 +38,21 @@ jobs:
       - name: Post-build tasks (sitemap + image optimization)
         run: npm run postbuild
 
+      - name: Build Histoire stories
+        run: npm run story:build
+
+      - name: Move Histoire stories to /stories
+        run: |
+          mkdir -p build/stories
+          mv histoire-static/* build/stories/
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'build'  # SvelteKit adapter-static output folder
+          path: build  # main site + stories now under /stories
 
       - name: Deploy to GitHub Pages
         id: deployment
