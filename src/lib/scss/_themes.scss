@@ -1,29 +1,29 @@
 @import '$lib/scss/_mixins.scss';
 
 @mixin base-theme {
-	@include define-color('primary', #6E29E7);
-	@include define-color('primary-shade', #b28cf2);	
-	@include define-color('primary-tint', #f9f6fe);
+	@include define-color('primary', #007bff); // hsl(215, 70%, 50%)
+	@include define-color('primary-shade', #1e3a8a);	
+	@include define-color('primary-tint', #e6f4ff);
 
-	@include define-color('secondary', #ff571a);
-	@include define-color('secondary-shade', #ffa280);
-	@include define-color('secondary-tint', #fff8f5);
+	@include define-color('secondary', #7c3aed); // hsl(250, 65%, 60%)
+	@include define-color('secondary-shade', #4c1d95);
+	@include define-color('secondary-tint', #f3e8ff);
 
 	@include define-color('yellow', #ffd400);
 
-	@include define-color('text', #1c1e26);
-	@include define-color('text-shade', #5d5f65);
+	@include define-color('text', #1c2733); // hsl(220, 15%, 20%)
+	@include define-color('text-shade', #4b5563);
 	@include define-color('text-inverse', #ffffff);
 	@include define-color('text-inverse-shade', #9eb4b5);
 
-	@include define-color('page-background', #f4f8fb);
+	@include define-color('page-background', #f4f8fb); // hsl(210, 20%, 98%)
 	@include define-color('post-page-background', #f3fbfc);
 	@include define-color('card-background', #ffffff);
 
 	// Used for Callout component
 	@include define-color('callout-background', #f4f8fb);
-	@include define-color('callout-background--info', #dfeffd);
-	@include define-color('callout-accent--info', #2883f4);
+	@include define-color('callout-background--info', #dbeafe);  // light info bg
+	@include define-color('callout-accent--info', #2883f4);      // hsl(200, 75%, 55%)
 	@include define-color('callout-background--warning', #fff6b6);
 	@include define-color('callout-accent--warning', #c87820);
 	@include define-color('callout-background--error', #ffe8e8);
@@ -45,29 +45,29 @@
 }
 
 @mixin dark-theme {
-	@include define-color('primary', #9f67ff);
-	@include define-color('primary-shade', #4612A1);	
-	@include define-color('primary-tint', #231934);
+	@include define-color('primary', #3b82f6); // hsl(215, 70%, 60%)
+	@include define-color('primary-shade', #1e40af);	
+	@include define-color('primary-tint', #0a192f);
 
-	@include define-color('secondary', #ff723f);
-	@include define-color('secondary-shade', #AB3307);
+	@include define-color('secondary', #8b5cf6); // hsl(250, 65%, 65%)
+	@include define-color('secondary-shade', #4c1d95);
 	@include define-color('secondary-tint', #1b1918);
 
 	@include define-color('yellow', #ffd400);
 
-	@include define-color('text', #ffffff);
-	@include define-color('text-shade', #9eb4b5);
-	@include define-color('text-inverse', #1c1e26);
-	@include define-color('text-inverse-shade', #5d5f65);
+	@include define-color('text', #e5e7eb); // hsl(210, 15%, 90%)
+	@include define-color('text-shade', #9ca3af);
+	@include define-color('text-inverse', #111827);
+	@include define-color('text-inverse-shade', #4b5563);
 
-	@include define-color('page-background', #1c1e26);
-	@include define-color('post-page-background', #141519);
-	@include define-color('card-background', #32343e);
+	@include define-color('page-background', #0a192f); // hsl(220, 15%, 10%)
+	@include define-color('post-page-background', #111827); 
+	@include define-color('card-background', #1f2937); // hsl(220, 15%, 15%)
 
 	// Used for Callout component
-	@include define-color('callout-background', #1c1e26);
-	@include define-color('callout-background--info', #1d3874);
-	@include define-color('callout-accent--info', #6ca9f7);
+	@include define-color('callout-background', #1e293b);
+	@include define-color('callout-background--info', #1e3a8a);
+	@include define-color('callout-accent--info', #60a5fa); // hsl(200, 75%, 60%)
 	@include define-color('callout-background--warning', #724413);
 	@include define-color('callout-accent--warning', #ffca39);
 	@include define-color('callout-background--error', #7c1d20);
