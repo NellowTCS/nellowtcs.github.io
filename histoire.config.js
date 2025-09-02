@@ -2,7 +2,6 @@ import { defaultColors, defineConfig } from 'histoire';
 import { HstSvelte } from '@histoire/plugin-svelte';
 
 export default defineConfig({
-  base: './',
   outDir: 'build/stories',
   plugins: [HstSvelte()],
   theme: {

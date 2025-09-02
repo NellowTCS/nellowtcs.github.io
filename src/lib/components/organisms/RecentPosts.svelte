@@ -9,8 +9,8 @@
 
 <ContentSection
 	id="recent-posts"
-	title="Blog posts"
-	description="This section shows the 4 most recent blog posts. Check them out for tips on how to get started!"
+	title="Recent posts"
+	description="Here are the 4 most recent blog posts. Check them out!"
 	align="left"
 >
 	<div slot="button">
