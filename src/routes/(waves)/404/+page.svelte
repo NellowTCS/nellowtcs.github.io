@@ -1,6 +1,12 @@
-<script>
-	import Button from '$lib/components/atoms/Button.svelte';
-	import Error from '$lib/icons/error.svelte';
+<script lang="ts">
+  import { onMount } from 'svelte';
+  import Button from '$lib/components/atoms/Button.svelte';
+  import Error from '$lib/icons/error.svelte';
+  import { redirectIfNeeded } from '$lib/utils/redirect';
+
+  onMount(() => {
+    redirectIfNeeded(window.location.pathname);
+  });
 </script>
 
 <div class="error-page">

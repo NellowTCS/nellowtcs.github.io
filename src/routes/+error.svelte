@@ -1,9 +1,15 @@
 <script>
+	import { onMount } from 'svelte';
 	import Header from '$lib/components/organisms/Header.svelte';
 	import Footer from '$lib/components/organisms/Footer.svelte';
-
 	import Button from '$lib/components/atoms/Button.svelte';
 	import Error from '$lib/icons/error.svelte';
+	import { redirectIfNeeded } from '$lib/utils/redirect';
+
+	// Check for redirects on mount
+	onMount(() => {
+		redirectIfNeeded(window.location.pathname);
+	});
 </script>
 
 <Header showBackground />
