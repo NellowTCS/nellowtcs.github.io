@@ -1,7 +1,7 @@
 ---
 title: "Curvomorphism: What it is and A Quick Guide"
 slug: curvomorphism-quick-guide
-coverImage: /images/posts/curvomorphism.svg
+coverImage: "/images/posts/curvomorphism.png"
 excerpt: When every corner has the same curve, nothing feels anchored. Nothing flows. Everything just sits there looking nice but kind of pointless.
 date: 2025-08-20T09:05:45-06:00
 updated: null
