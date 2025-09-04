@@ -16,7 +16,6 @@ keywords:
 ---
 
 <script>
-  import Callout from "$lib/components/molecules/Callout.svelte";
   import CodeBlock from "$lib/components/molecules/CodeBlock.svelte";
 </script>
 

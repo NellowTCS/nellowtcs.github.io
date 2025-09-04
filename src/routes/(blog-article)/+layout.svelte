@@ -3,7 +3,8 @@
 	import Footer from '$lib/components/organisms/Footer.svelte';
 	import Tag from '$lib/components/atoms/Tag.svelte';
 	import dateformat from 'dateformat';
-
+	import { onMount } from 'svelte';
+	
 	import { keywords, siteBaseUrl, title } from '$lib/data/meta';
 	import type { BlogPost } from '$lib/utils/types';
 	import RelatedPosts from '$lib/components/organisms/RelatedPosts.svelte';
@@ -22,6 +23,30 @@
 			metaKeywords = post.keywords.concat(metaKeywords);
 		}
 	}
+
+	onMount(() => {
+		const container = document.getElementById('giscus-container');
+		if (!container) return;
+
+		const giscusScript = document.createElement('script');
+		giscusScript.src = 'https://giscus.app/client.js';
+		giscusScript.setAttribute('data-repo', 'NellowTCS/NellowTCS.github.io');
+		giscusScript.setAttribute('data-repo-id', 'R_kgDOPlUWhw');
+		giscusScript.setAttribute('data-category', 'Announcements');
+		giscusScript.setAttribute('data-category-id', 'DIC_kwDOPlUWh84Cu-4F');
+		giscusScript.setAttribute('data-mapping', 'pathname');
+		giscusScript.setAttribute('data-strict', '1');
+		giscusScript.setAttribute('data-reactions-enabled', '1');
+		giscusScript.setAttribute('data-emit-metadata', '0');
+		giscusScript.setAttribute('data-input-position', 'top');
+		giscusScript.setAttribute('data-theme', 'preferred_color_scheme');
+		giscusScript.setAttribute('data-lang', 'en');
+		giscusScript.setAttribute('data-loading', 'lazy');
+		giscusScript.crossOrigin = 'anonymous';
+		giscusScript.async = true;
+
+		container.appendChild(giscusScript);
+	});
 </script>
 
 <svelte:head>
@@ -83,6 +108,8 @@
 				<RelatedPosts posts={post.relatedPosts} />
 			</div>
 		{/if}
+
+		<div id="giscus-container" />
 	</main>
 
 	<Footer />
