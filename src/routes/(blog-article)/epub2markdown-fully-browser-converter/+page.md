@@ -24,7 +24,7 @@ Unfortunately, there are almost no Markdown file based ebooks. So, I decided to 
 
 If you want to check it out, it's on my GitHub here:  
 [GitHub Repository](https://github.com/NellowTCS/JSModules/tree/main/ePub2Markdown/)  
-[Direct Link](https://nellowtcs.github.io/JSModules/ePub2Markdown/index.html)
+[Direct Link](https://nellowtcs.me/JSModules/ePub2Markdown/index.html)
 
 ## How it Works
 

@@ -30,7 +30,7 @@
 
 		const giscusScript = document.createElement('script');
 		giscusScript.src = 'https://giscus.app/client.js';
-		giscusScript.setAttribute('data-repo', 'NellowTCS/NellowTCS.github.io');
+		giscusScript.setAttribute('data-repo', 'NellowTCS/nellowtcs.me');
 		giscusScript.setAttribute('data-repo-id', 'R_kgDOPlUWhw');
 		giscusScript.setAttribute('data-category', 'Announcements');
 		giscusScript.setAttribute('data-category-id', 'DIC_kwDOPlUWh84Cu-4F');

@@ -2,7 +2,7 @@
 // So they can be added as suffixes on different pages
 // Via <svelte:head>
 
-export const siteBaseUrl = 'https://nellowtcs.github.io/';
+export const siteBaseUrl = 'https://nellowtcs.me/';
 
 export const keywords = [
 	'Developer',
