@@ -14,8 +14,8 @@
 				color === 'primary'
 					? 'var(--color--primary)'
 					: color === 'secondary'
-					? 'var(--color--secondary)'
-					: 'var(--color--yellow',
+						? 'var(--color--secondary)'
+						: 'var(--color--yellow)',
 			size: random(10, 20),
 			style: {
 				// Pick a random spot in the available space
@@ -26,7 +26,7 @@
 	};
 
 	let sparkles: SparkleType[] = [];
-	let sparklesInterval: NodeJS.Timer;
+	let sparklesInterval: ReturnType<typeof setInterval>;
 
 	onMount(() => {
 		sparklesInterval = setInterval(() => {
@@ -50,7 +50,7 @@
 </script>
 
 <div class="sparkle-wrapper">
-	{#each sparkles as sparkle (sparkle.id)}
+	{#each sparkles as sparkle (String(sparkles.indexOf(sparkle)))}
 		<Sparkle color={sparkle.color} size={sparkle.size} style={sparkle.style} />
 	{/each}
 	<span class="slot-wrapper">

@@ -1,0 +1,2 @@
+requests>=2.33.1
+feedparser>=6.0.0

@@ -17,7 +17,7 @@ I achieved this with the help of SvelteKit. There is almost no JavaScript runnin
 
 # Demo site
 
-You can see the template live [on the demo site](https://sveltekit-static-blog-template.vercel.app/). Additionally, you can check all components in isolation [on Histoire](https://histoire-sveltekit-static-blog-template.vercel.app/).
+You can see the template live [on the demo site](https://sveltekit-static-blog-template.vercel.app/).
 
 # Building & Running Locally
 
@@ -31,10 +31,6 @@ npm run dev
 ```
 
 The site should now be available at http://localhost:5173/ on your local machine, and your local machine's IP address on your network—great for testing on mobile OSes.
-
-# Histoire / Storybook
-
-I've used [Histoire](https://histoire.dev), a Vite-based Storybook alternative to be able to see and develop components in isolation. To open it, run `npm run story:dev`.
 
 # Image Optimization
 

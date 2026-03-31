@@ -1,10 +1,5 @@
 {
-	"cssVariables.lookupFiles": [
-		"**/*.css",
-		"**/*.scss",
-		"**/*.sass",
-		"**/*.less"
-	],
+	"cssVariables.lookupFiles": ["**/*.css", "**/*.scss", "**/*.sass", "**/*.less"],
 	"editor.formatOnSave": true,
 	"prettier.singleQuote": true,
 	"files.autoSave": "afterDelay"

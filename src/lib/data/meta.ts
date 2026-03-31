@@ -4,17 +4,10 @@
 
 export const siteBaseUrl = 'https://nellowtcs.me/';
 
-export const keywords = [
-	'Developer',
-	'Projects',
-	'Blog',
-	'Web',
-	'Static Site'
-];
+export const keywords = ['Developer', 'Projects', 'Blog', 'Web', 'Static Site'];
 
-export const description =
-	"The official blog for NellowTCS.";
+export const description = 'The official blog for NellowTCS.';
 
-export const title = "Home | NellowTCS";
+export const title = 'Home | NellowTCS';
 
 export const image = `${siteBaseUrl}/images/site-preview.png`;

@@ -6,8 +6,9 @@ excerpt: A cool thing I made for finding that one weirdly specific GitHub reposi
 date: 2025-10-02T02:00:00-06:00
 updated: null
 hidden: false
-tags: ["Web", "Svelte", "Projects"]
-keywords: ["Showcases"]
+tags: ['Web', 'Svelte', 'Projects']
+keywords: ['Showcases']
+featured: true
 ---
 
 Have you ever needed a specific library, a code example, or that one cool tool you saw mentioned on Reddit last week? I've been in that situation a lot of times!
@@ -49,6 +50,7 @@ GitHub has millions of repositories, but loading them all at once would crash yo
 ## Built for Speed and Accessibility
 
 Under the hood, TAGRFT is powered by:
+
 - Svelte 5
 - Vite
 - Lucide Icons
@@ -61,6 +63,7 @@ The modern, curvomorphic UI looks really cool on any device, from your desktop w
 ## Optional GitHub Token for Power Users
 
 While TAGRFT works perfectly without authentication, adding a GitHub Personal Access Token supercharges your experience:
+
 - 60 requests/hour (no token) → 5,000 requests/hour (with token)
 - Securely stored in your browser's localStorage
 - Never shared or transmitted anywhere except GitHub
@@ -74,6 +77,7 @@ Ready to try it? TAGRFT is open source and easy to run locally or online!:
 Just open https://nellowtcs.me/TAGRFT in your browser, and that's it!
 
 ### Local Development
+
 ```bash
 # Clone the repository
 git clone https://github.com/NellowTCS/TAGRFT.git

@@ -2,12 +2,13 @@
 title: ePub2Markdown - A fully in browser converter.
 slug: epub2markdown-fully-browser-converter
 coverImage: /images/posts/Screenshot 2025-09-04 2.38.48 PM.png
-excerpt: "Unfortunately, there are almost no Markdown based ebooks. So, I decided to make my own converter for ePub to Markdown."
+excerpt: 'Unfortunately, there are almost no Markdown based ebooks. So, I decided to make my own converter for ePub to Markdown.'
 date: 2025-09-04T20:38:11.044Z
 updated: null
 hidden: false
-tags: ["Web", "HTML", "Projects"]
-keywords: ["Showcases"]
+tags: ['Web', 'HTML', 'Projects']
+keywords: ['Showcases']
+featured: true
 ---
 
 <script>
@@ -15,7 +16,7 @@ keywords: ["Showcases"]
 </script>
 
 Over the weekend, I got to work making something for the PocketMage.  
-If you haven't heard of it, [Ashtf](https://www.youtube.com/@ashtf) made a productivity device using an ESP32-S3 and an eInk display. 
+If you haven't heard of it, [Ashtf](https://www.youtube.com/@ashtf) made a productivity device using an ESP32-S3 and an eInk display.
 Check out the YouTube playlist [here](https://www.youtube.com/watch?v=VPQ2q7yVjZs&list=PL5jL92TrQ803IKtdFwmUCKCjp15ejfAv7)!
 
 One of the many ideas for the device was to be able to read eBooks directly off of the PM. As ePub rendering is complicated and computationally intensive, it was suggested that Markdown based ebooks were used (Ashtf had made a excellent Markdown renderer).
@@ -48,9 +49,7 @@ Because of this, the first thing the converter does is feed your .epub into JSZi
 
 Every ePub has a META-INF/container.xml file that points to the “real” organizer of the book: the .opf file. Think of the OPF as the table of contents + manifest + metadata all rolled into one.
 
-It lists:
-    1. The manifest (every file that belongs to the book).
-    2. The spine (which files to read, and in what order).
+It lists: 1. The manifest (every file that belongs to the book). 2. The spine (which files to read, and in what order).
 
 Without this, we’d just have a random pile of HTML files and no clue where chapter one actually starts.
 
@@ -104,7 +103,7 @@ The complete Markdown text is dropped into a big text area, ready for copy/paste
 
 ### Why This Approach Works
 
-The reason this tool can live entirely in the browser is because ePubs are already just structured HTML + XML. By leaning on the OPF’s spine, the converter doesn’t need to “guess” the order of chapters. And because everything runs client-side with JSZip, your book never leaves your computer!  
+The reason this tool can live entirely in the browser is because ePubs are already just structured HTML + XML. By leaning on the OPF’s spine, the converter doesn’t need to “guess” the order of chapters. And because everything runs client-side with JSZip, your book never leaves your computer!
 
 It’s private, fast (like seriously impressively fast), and lightweight!
 
@@ -126,15 +125,14 @@ Here’s a small sample of what the conversion looks like:
 
 - Input (ePub HTML):
 
-
 <CodeBlock lang="html">
 
 ```html
 <h1>Chapter 1</h1>
 <p>It was a bright cold day in April, and the clocks were striking twelve.</p>
 <p><a href="note1.xhtml">[1]</a></p>
-
 ```
+
 </CodeBlock>
 
 - Output (Markdown):
@@ -148,6 +146,7 @@ It was a bright cold day in April, and the clocks were striking twelve.
 
 [1](note1.xhtml)
 ```
+
 </CodeBlock>
 
 ## Current Limitations
@@ -177,7 +176,6 @@ Some ideas I had for the future:
 - Split-per-chapter export.
 
 If you’d like to help, PRs and issues are welcome on the [GitHub repo!](https://github.com/NellowTCSJSModules/)
-
 
 ## Conclusion
 

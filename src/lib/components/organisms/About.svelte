@@ -11,8 +11,9 @@
 			<SparklingHighlight color="secondary">cool projects!</SparklingHighlight>
 		</h2>
 		<p>
-			I know JavaScript, TypeScript, HTML, CSS, C and C++ (not that good at those tho), and some Rust! <br>
-		    Check out some of my projects on my GitHub or read about them at the blog.
+			I know JavaScript, TypeScript, HTML, CSS, C and C++ (not that good at those tho), and some
+			Rust! <br />
+			Check out some of my projects on my GitHub or read about them at the blog.
 		</p>
 		<div class="socials">
 			<span>Socials:</span>

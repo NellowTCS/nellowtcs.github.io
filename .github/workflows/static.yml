@@ -2,7 +2,7 @@ name: Deploy SvelteKit static site + Histoire to Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: ['main']
   workflow_dispatch:
 
 permissions:
@@ -11,7 +11,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: false
 
 jobs:
@@ -40,14 +40,14 @@ jobs:
 
       - name: Build Histoire stories
         run: npx histoire build
-        
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: build  # main site + stories now under /stories
+          path: build # main site + stories now under /stories
 
       - name: Deploy to GitHub Pages
         id: deployment

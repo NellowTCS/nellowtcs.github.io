@@ -4,11 +4,12 @@
 	import Tag from '$lib/components/atoms/Tag.svelte';
 	import dateformat from 'dateformat';
 	import { onMount } from 'svelte';
-	
+
 	import { keywords, siteBaseUrl, title } from '$lib/data/meta';
 	import type { BlogPost } from '$lib/utils/types';
 	import RelatedPosts from '$lib/components/organisms/RelatedPosts.svelte';
 	import Image from '$lib/components/atoms/Image.svelte';
+	import SubscribeForm from '$lib/components/organisms/SubscribeForm.svelte';
 
 	export let data: { post: BlogPost };
 	$: ({ post } = data);
@@ -102,6 +103,8 @@
 				<slot />
 			</div>
 		</article>
+
+		<SubscribeForm />
 
 		{#if post.relatedPosts && post.relatedPosts.length > 0}
 			<div class="container">
