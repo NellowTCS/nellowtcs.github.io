@@ -1,7 +1,7 @@
 ---
 title: ePub2Markdown - A fully in browser converter.
 slug: epub2markdown-fully-browser-converter
-coverImage: /images/posts/Screenshot 2025-09-04 2.38.48 PM.png
+coverImage: /images/posts/epubtomarkdown.png
 excerpt: 'Unfortunately, there are almost no Markdown based ebooks. So, I decided to make my own converter for ePub to Markdown.'
 date: 2025-09-04T20:38:11.044Z
 updated: null

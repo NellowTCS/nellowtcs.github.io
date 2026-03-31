@@ -34,7 +34,7 @@ SAMPLE_POSTS = [
         "title": "ePub2Markdown: Fully Browser Converter",
         "link": "https://nellowtcs.me/epub2markdown-fully-browser-converter",
         "excerpt": "Convert your ePub files to Markdown right in your browser - no downloads required!",
-        "image": "https://nellowtcs.me/images/posts/Screenshot%202025-09-04%202.38.48%20PM.png"
+        "image": "https://nellowtcs.me/images/posts/epubtomarkdown.png"
     },
     {
         "title": "Curvomorphism: A Quick Guide",
