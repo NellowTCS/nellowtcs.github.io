@@ -275,18 +275,26 @@ def save_state(state):
 
 def send_email(subject, body, api_key):
     config = load_config()
+    email_status = config.get("email_status", "draft")
+    
+    payload = {
+        "subject": subject,
+        "body": body,
+        "type": "Newsletter",
+        "status": email_status
+    }
+    
+    if email_status == "scheduled":
+        from datetime import datetime, timedelta, timezone
+        payload["publish_date"] = (datetime.now(timezone.utc) + timedelta(seconds=30)).isoformat()
+    
     response = requests.post(
         "https://api.buttondown.com/v1/emails",
         headers={
             "Authorization": f"Token {api_key}",
             "Content-Type": "application/json"
         },
-        json={
-            "subject": subject,
-            "body": body,
-            "type": "Newsletter",
-            "status": config.get("email_status", "draft")
-        }
+        json=payload
     )
     response.raise_for_status()
     return response.json()
