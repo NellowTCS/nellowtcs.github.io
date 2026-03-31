@@ -284,6 +284,7 @@ def send_email(subject, body, api_key):
         json={
             "subject": subject,
             "body": body,
+            "type": "Newsletter",
             "status": config.get("email_status", "draft")
         }
     )
