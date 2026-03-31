@@ -16,20 +16,85 @@ def main():
         print("Error: BUTTONDOWN_API_KEY not set")
         sys.exit(1)
     
-    changed_files = os.environ.get("CHANGED_FILES", "")
-    
+    changed_files_raw = os.environ.get("CHANGED_FILES", "")
+    changed_paths = [p for p in changed_files_raw.split(",") if p]
+
+    # derive slugs from changed paths, but only include paths that exist
+    # in the checked-out repo (this ignores deletions)
+    changed_slugs = set()
+    for p in changed_paths:
+        p_path = Path(p)
+        if not p_path.exists():
+            # deleted file, skip
+            continue
+        parts = p_path.parts
+        try:
+            idx = parts.index("(blog-article)")
+            slug_from_path = parts[idx + 1]
+        except ValueError:
+            slug_from_path = p_path.stem
+        changed_slugs.add(slug_from_path)
+
+    feed_entries = {str(entry.link).rstrip('/').split('/')[-1]: entry for entry in feedparser.parse(config["rss_url"]).entries}
+
+    def parse_frontmatter(md_path: Path):
+        text = md_path.read_text(encoding="utf-8")
+        if not text.startswith("---"):
+            return {}
+        end = text.find("\n---", 3)
+        if end == -1:
+            return {}
+        raw = text[3:end].strip()
+        data = {}
+        for line in raw.splitlines():
+            if not line.strip() or line.strip().startswith("#"):
+                continue
+            if ":" not in line:
+                continue
+            key, value = line.split(":", 1)
+            data[key.strip()] = value.strip().strip('"').strip("'")
+        return data
+
     new_posts = []
-    for entry in feedparser.parse(config["rss_url"]).entries:
-        link = str(entry.link)
-        slug = link.split("/")[-1].rstrip("/")
-        if slug in changed_files and slug not in state["sent_posts"]:
+    for slug in changed_slugs:
+        if slug in state["sent_posts"]:
+            continue
+
+        entry = feed_entries.get(slug)
+        if entry:
             new_posts.append({
                 "title": entry.title,
-                "link": link,
+                "link": str(entry.link),
                 "slug": slug,
                 "excerpt": getattr(entry, 'description', '') or '',
                 "image": get_image_url(entry)
             })
+            continue
+
+        # Blog may not have published to RSS yet. Try source file frontmatter.
+        blog_md = Path("src/routes/(blog-article)") / slug / "+page.md"
+        if not blog_md.exists():
+            continue
+
+        fm = parse_frontmatter(blog_md)
+        if not fm:
+            continue
+
+        if fm.get("hidden", "false").lower() == "true":
+            continue
+
+        title = fm.get("title", slug)
+        excerpt = fm.get("excerpt", "")
+        link = f"{config.get('blog_base_url', '').rstrip('/')}/blog/{slug}"
+        image_url = fm.get("coverImage", "")
+
+        new_posts.append({
+            "title": title,
+            "link": link,
+            "slug": slug,
+            "excerpt": excerpt,
+            "image": image_url
+        })
     
     if not new_posts:
         print("No new posts to announce")
