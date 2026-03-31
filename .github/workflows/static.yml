@@ -1,4 +1,4 @@
-name: Deploy SvelteKit static site + Histoire to Pages
+name: Deploy SvelteKit static site to Pages
 
 on:
   push:
@@ -38,16 +38,13 @@ jobs:
       - name: Post-build tasks (sitemap + image optimization)
         run: npm run postbuild
 
-      - name: Build Histoire stories
-        run: npx histoire build
-
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: build # main site + stories now under /stories
+          path: build
 
       - name: Deploy to GitHub Pages
         id: deployment
