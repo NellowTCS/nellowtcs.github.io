@@ -18,6 +18,7 @@ export const importPosts = (render = false) => {
 
 	const posts: BlogPost[] = [];
 	for (const path in imports) {
+		if (path.includes('/(projects)/')) continue;
 		const post = imports[path] as any;
 		if (post) {
 			posts.push({

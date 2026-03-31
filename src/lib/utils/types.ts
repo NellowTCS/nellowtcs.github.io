@@ -36,3 +36,16 @@ export type BlogPost = {
 	relatedPosts: BlogPost[];
 	coverImage: string | undefined;
 };
+
+export type Project = {
+	tags: string[];
+	hidden: boolean;
+	slug: string;
+	title: string;
+	date: string;
+	excerpt: string;
+	html: string | undefined;
+	coverImage: string | undefined;
+	link: string | undefined;
+	repo: string | undefined;
+};
