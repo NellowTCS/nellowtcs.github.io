@@ -1,7 +1,7 @@
 import json
 import os
 import requests
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 CONFIG_PATH = Path(__file__).parent.parent / "config.json"
@@ -303,10 +303,7 @@ def get_week_start():
     now = datetime.now(timezone.utc)
     days_since_sunday = now.weekday() + 1
     week_start = now.replace(hour=0, minute=0, second=0, microsecond=0)
-    if days_since_sunday < 7:
-        week_start = week_start.replace(day=week_start.day - days_since_sunday)
-    else:
-        week_start = week_start.replace(day=week_start.day - 7)
+    week_start = week_start - timedelta(days=days_since_sunday if days_since_sunday < 7 else 7)
     return week_start
 
 def get_month_start():
