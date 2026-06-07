@@ -7,13 +7,13 @@
     hidden: false
     tags:
       - honzo
-  - ebook
-  - format
-  - project
+      - ebook
+      - format
+      - project
     keywords:
       - Showcase
-  - Something I Made
-  - Rust
+      - Something I Made
+      - Rust
 ---
 
 so uhhh  
