@@ -1,7 +1,7 @@
 ---
     title: "Honzo"
     slug: "honzo"
-    coverImage: "/images/posts/honzo.webp"
+    coverImage: "/images/posts/honzo.png"
     excerpt: "so uhhh... i made an ebook format. like a real one"
     date: "2026-06-07T07:46:12.053-06:00"
     hidden: false
