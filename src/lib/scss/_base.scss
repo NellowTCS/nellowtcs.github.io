@@ -1,4 +1,4 @@
-// Styles that are used everywhere
+@use '$lib/scss/mixins' as *;
 
 .container {
 	@include padded-container;

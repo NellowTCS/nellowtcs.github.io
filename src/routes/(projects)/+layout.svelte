@@ -58,7 +58,7 @@
 </div>
 
 <style lang="scss">
-	@import '$lib/scss/_mixins.scss';
+	@use '$lib/scss/mixins' as *;
 
 	.article-layout {
 		--body-background-color: var(--color--post-page-background);

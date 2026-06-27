@@ -19,7 +19,7 @@ const config = {
 	preprocess: [
 		vitePreprocess(),
 		mdsvex({
-			extensions: extensions,
+			extensions: ['.md'],
 			rehypePlugins: [
 				rehypeExternalLinks, // Adds 'target' and 'rel' to external links
 				rehypeSlug, // Adds 'id' attributes to Headings (h1,h2,etc)

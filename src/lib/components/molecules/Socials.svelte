@@ -33,7 +33,7 @@
 </div>
 
 <style lang="scss">
-	@import '../../scss/breakpoints.scss';
+	@use '../../scss/breakpoints' as *;
 	.socials {
 		display: flex;
 		align-items: center;

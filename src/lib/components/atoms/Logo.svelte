@@ -21,7 +21,7 @@
 </div>
 
 <style lang="scss">
-	@import '$lib/scss/breakpoints.scss';
+	@use '$lib/scss/breakpoints' as *;
 
 	.logo {
 		width: auto;

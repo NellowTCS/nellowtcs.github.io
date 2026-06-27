@@ -1,21 +1,21 @@
-@import '$lib/scss/_reset.scss';
-@import '$lib/scss/_variables.scss';
-@import '$lib/scss/_themes.scss';
-@import '$lib/scss/_breakpoints.scss';
-@import '$lib/scss/_functions.scss';
-@import '$lib/scss/_mixins.scss';
-@import '$lib/scss/_base.scss';
-@import '$lib/scss/_typography.scss';
-@import '$lib/scss/_markdown.scss';
-@import '$lib/scss/_code-highlights.scss';
-@import '$lib/scss/animations.scss';
+@forward '$lib/scss/reset';
+@forward '$lib/scss/variables';
+@forward '$lib/scss/themes';
+@forward '$lib/scss/breakpoints';
+@forward '$lib/scss/functions';
+@forward '$lib/scss/mixins';
+@forward '$lib/scss/base';
+@forward '$lib/scss/typography';
+@forward '$lib/scss/markdown';
+@forward '$lib/scss/code-highlights';
+@forward '$lib/scss/animations';
 
-@import '@fontsource/inter';
-@import '@fontsource/inter/600.css';
-@import '@fontsource/inter/700.css';
-@import '@fontsource/merriweather';
-@import '@fontsource/merriweather/900.css';
-@import '@fontsource/ubuntu-mono';
+@use '@fontsource/inter' as *;
+@use '@fontsource/inter/600.css' as *;
+@use '@fontsource/inter/700.css' as *;
+@use '@fontsource/merriweather' as *;
+@use '@fontsource/merriweather/900.css' as *;
+@use '@fontsource/ubuntu-mono' as *;
 
 body {
 	--body-background-color: var(--color--page-background);

@@ -1,45 +1,96 @@
-# SvelteKit Static Blog Template
+# nellowtcs.github.io
 
-A lightweight and customizable template for blogs and portfolio websites, built with SvelteKit.
+[![Built with SvelteKit](https://img.shields.io/badge/built%20with-SvelteKit-000000?logo=svelte)](https://kit.svelte.dev/)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-<p align="center">
-    <img src="static/images/site-screenshot.png" alt="Screenshot" />
-</p>
+My personal blog and portfolio site, built with SvelteKit as a fully static site. Zero runtime JavaScript overhead, automatic dark mode, responsive across all viewports, and image optimization baked into the build pipeline.
 
-It was built with a few goals in mind:
+---
 
-- Responsive design: the website looks and behaves well on screens of all sizes;
-- Fast: it only loads what's needed for it to work;
-- Adaptive: it supports dark mode from most operating systems by default (desktop and mobile);
-- Pretty: have a pleasant design that is both accessible and pleasing to the eye.
+## Features
 
-I achieved this with the help of SvelteKit. There is almost no JavaScript running, and it actually works with JS disabled! While JS is awesome, it's important to know when it's not needed.
+| Feature                 | Description                                                                |
+| ----------------------- | -------------------------------------------------------------------------- |
+| **Static output**       | Prerendered pages with no server required. Host anywhere.                  |
+| **Dark mode**           | System preference detection plus manual toggle. Persisted across sessions. |
+| **Responsive**          | Breakpoints for iPhone SE through 4K desktop, six distinct layouts.        |
+| **Image optimization**  | Automatic WebP and AVIF conversion during build via image-transmutation.   |
+| **Markdown content**    | MDsveX processes all posts and includes Svelte components inside markdown. |
+| **Syntax highlighting** | Prism-based with custom theme across 20+ languages.                        |
+| **Comments**            | Giscus integration using GitHub Discussions.                               |
+| **No JS required**      | Core reading experience works with JavaScript disabled.                    |
 
-# Demo site
-
-You can see the template live [on the demo site](https://sveltekit-static-blog-template.vercel.app/).
-
-# Building & Running Locally
-
-To run it locally, you simply have to run:
+## Quick Start
 
 ```shell
-# First, install dependencies
 npm install
-# Then, run it on dev mode
 npm run dev
 ```
 
-The site should now be available at http://localhost:5173/ on your local machine, and your local machine's IP address on your network—great for testing on mobile OSes.
+The dev server starts at `http://localhost:5173` and is accessible from other devices on your network for mobile testing.
 
-# Image Optimization
+```shell
+npm run build
+```
 
-This website uses [image-transmutation](https://github.com/matfantinel/image-transmutation) to automatically optimize images used in the site. This means that even if you use non-optimal image formats (like lossless PNGs), it will go over the images and convert images to WebP and AVIF for you, as long as you use the `<Image />` component instead of `<img />`. This is done on build, so it doesn't change anything when running the website locally.
+Output goes to the `build` directory, a fully static site ready for deployment.
 
-# Managing Posts
+## Repository Layout
 
-All posts are Markdown files that are processed with [MDsveX](https://mdsvex.pngwn.io/) to allow using Svelte components inside them. In order to make it easier to manage posts, I highly recommend the [Front Matter VS Code extension](https://frontmatter.codes/), which gives you a nice CMS-like UI.
+```txt
+src/
+  lib/
+    components/       # Reusable Svelte components (atoms, molecules, organisms)
+    data/             # Blog post and project data utilities
+    icons/            # SVG icon components
+    scss/             # Global styles, themes, variables, mixins
+    utils/            # Shared utilities and type definitions
+  routes/
+    (blog-article)/   # Blog post pages (markdown)
+    (projects)/       # Project detail pages
+    (waves)/          # Landing, blog list, project list, 404
+    rss.xml/          # RSS feed endpoint
+scripts/              # Email automation (weekly/monthly digests, new post notifications)
+static/
+  images/             # Site images and post cover images
+```
 
-# Hosting
+## Writing Posts
 
-When you run `npm run build`, the website will be compiled into a static site, which means you can host it pretty much anywhere. Some free alternatives I recommend are GitHub Pages, Vercel and Netlify.
+Posts are markdown files in `src/routes/(blog-article)/` with front matter:
+
+```yaml
+---
+title: 'Post Title'
+slug: 'post-slug'
+coverImage: '/images/posts/cover.png'
+excerpt: 'Short description for cards and SEO'
+date: '2026-01-01T12:00:00.000-06:00'
+hidden: false
+tags:
+  - tag-one
+  - tag-two
+---
+```
+
+The [Front Matter VS Code extension](https://frontmatter.codes/) provides a CMS-like interface for managing post metadata.
+
+## Packages
+
+| Package                    | Purpose                                              |
+| -------------------------- | ---------------------------------------------------- |
+| `@sveltejs/adapter-static` | Static site generation                               |
+| `mdsvex`                   | Markdown preprocessing with Svelte component support |
+| `sass`                     | SCSS preprocessing                                   |
+| `image-transmutation`      | Automatic WebP/AVIF conversion                       |
+| `prismjs`                  | Syntax highlighting                                  |
+| `svelte-sitemap`           | Automatic sitemap generation                         |
+| `giscus`                   | GitHub Discussions-backed comments                   |
+
+## Hosting
+
+The build output is a fully static site. It can be deployed to GitHub Pages, Vercel, Netlify, or any static file server. The included GitHub Actions workflow (`static.yml`) handles deployment to GitHub Pages on push to `main`.
+
+## License
+
+MIT. See [LICENSE](LICENSE).

@@ -19,7 +19,7 @@
 so uhhh  
 i made an ebook format  
 like a real one  
-like a whole ecosystem  
+like a whole ecosystem
 
 it just kind of happened while i was minding my own business and suddenly it was 110 hours later and i had a reader and a converter and a spec and a demo suite and a drm system that i reinvented twice because apparently i enjoy pain
 
@@ -73,12 +73,12 @@ which is fair because they were
 
 then one night i blinked and suddenly i was rebuilding the entire ui
 
-- new header  
-- new layout  
-- new grid system  
-- new panels  
-- new chunk table  
-- new everything  
+- new header
+- new layout
+- new grid system
+- new panels
+- new chunk table
+- new everything
 
 i basically did a full renovation like i was on some hgtv show for developers
 
@@ -114,17 +114,17 @@ did a lot
 
 <img src="https://cdn.hackclub.com/019ea049-529f-768e-8040-fb1d97157c05/Screenshot%202026-06-06%20at%209.59.45%E2%80%AFPM.png" alt="image"/>
 
-- docs  
-- spec  
-- kaitai  
-- c bindings  
-- ts bindings  
-- converters  
-- book maker gui  
-- design system  
-- diagrams  
-- examples  
-- polish  
+- docs
+- spec
+- kaitai
+- c bindings
+- ts bindings
+- converters
+- book maker gui
+- design system
+- diagrams
+- examples
+- polish
 
 See the Macondo page lolll: https://macondo.hackclub.com/projects/3584 for my rambles.
 

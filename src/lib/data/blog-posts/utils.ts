@@ -6,6 +6,7 @@ import Prism from 'prismjs';
 // is not removed automatically on build
 const ifYouRemoveMeTheBuildFails = Prism;
 import 'prism-svelte';
+import { render as svelteRender } from 'svelte/server';
 import readingTime from 'reading-time/lib/reading-time';
 import striptags from 'striptags';
 import type { BlogPost } from '$lib/utils/types';
@@ -23,7 +24,7 @@ export const importPosts = (render = false) => {
 		if (post) {
 			posts.push({
 				...post.metadata,
-				html: render && post.default.render ? post.default.render()?.html : undefined
+				html: render && post.default ? svelteRender(post.default).html : undefined
 			});
 		}
 	}

@@ -1,3 +1,4 @@
+import { render as svelteRender } from 'svelte/server';
 import type { Project } from '$lib/utils/types';
 
 export const importProjects = (render = false) => {
@@ -13,7 +14,7 @@ export const importProjects = (render = false) => {
 			if (project) {
 				projects.push({
 					...project.metadata,
-					html: render && project.default.render ? project.default.render()?.html : undefined
+					html: render && project.default ? svelteRender(project.default).html : undefined
 				});
 			}
 		}
