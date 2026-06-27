@@ -20,7 +20,7 @@
 		"@sveltejs/adapter-static": "^3.0.0",
 		"@sveltejs/kit": "^2.66.0",
 		"@sveltejs/vite-plugin-svelte": "^7.1.2",
-		"@types/node": "^25.5.0",
+		"@types/node": "^26.0.1",
 		"dateformat": "^5.0.3",
 		"eslint": "^8.57.0",
 		"eslint-config-prettier": "^9.0.0",
