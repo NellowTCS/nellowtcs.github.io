@@ -39,7 +39,7 @@
 		"svelte-check": "^4.6.0",
 		"svelte-sitemap": "^4.0.3",
 		"typescript": "^6.0.3",
-		"vite": "^8.0.16"
+		"vite": "^8.1.0"
 	},
 	"type": "module",
 	"dependencies": {
