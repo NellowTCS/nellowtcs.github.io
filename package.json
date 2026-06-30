@@ -43,7 +43,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@fontsource/inter": "^4.5.15",
+		"@fontsource/inter": "^5.2.8",
 		"@fontsource/merriweather": "^5.2.11",
 		"@fontsource/ubuntu-mono": "^5.2.8"
 	}
