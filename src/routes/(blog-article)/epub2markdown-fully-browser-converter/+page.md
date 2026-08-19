@@ -24,8 +24,8 @@ One of the many ideas for the device was to be able to read eBooks directly off 
 Unfortunately, there are almost no Markdown file based ebooks. So, I decided to make my own converter for ePub to Markdown.
 
 If you want to check it out, it's on my GitHub here:  
-[GitHub Repository](https://github.com/NellowTCS/JSModules/tree/main/ePub2Markdown/)  
-[Direct Link](https://nellowtcs.me/JSModules/ePub2Markdown/index.html)
+[GitHub Repository](https://github.com/NellowTCS/MiniRepos/tree/main/ePub2Markdown/)  
+[Direct Link](https://nellowtcs.me/MiniRepos/ePub2Markdown/index.html)
 
 ## How it Works
 
@@ -93,7 +93,7 @@ Because some ePubs can be chunky (chunky bois), the app keeps you updated with a
 
 - When the conversion finishes
 
-If any error ever happens, open a issue at the [GitHub](https://github.com/NellowTCSJSModules/) with the tag `ePub2Markdown`!
+If any error ever happens, open a issue at the [GitHub](https://github.com/NellowTCS/MiniRepos/) with the tag `ePub2Markdown`!
 
 ### Step 6: Stitching It All Together
 
@@ -175,7 +175,7 @@ Some ideas I had for the future:
 
 - Split-per-chapter export.
 
-If you’d like to help, PRs and issues are welcome on the [GitHub repo!](https://github.com/NellowTCSJSModules/)
+If you’d like to help, PRs and issues are welcome on the [GitHub repo!](https://github.com/NellowTCS/MiniRepos/)
 
 ## Conclusion
 

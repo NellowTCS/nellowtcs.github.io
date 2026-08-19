@@ -23,7 +23,7 @@
 	<div class="footer" slot="footer">
 		{#if tags && tags.length > 0}
 			<div class="tags">
-				{#each tags as tag}
+				{#each tags as tag (tag.label)}
 					<Tag color={tag.color}>{tag.label}</Tag>
 				{/each}
 			</div>

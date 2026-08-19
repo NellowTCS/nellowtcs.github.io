@@ -3,7 +3,7 @@
 [![Built with SvelteKit](https://img.shields.io/badge/built%20with-SvelteKit-000000?logo=svelte)](https://kit.svelte.dev/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-My personal blog and portfolio site, built with SvelteKit as a fully static site. Zero runtime JavaScript overhead, automatic dark mode, responsive across all viewports, and image optimization baked into the build pipeline.
+My personal blog and portfolio site, built with SvelteKit as a fully static site. Zero runtime JavaScript overhead, automatic dark mode, responsive across all viewports, and image optimization built in into the build pipeline.
 
 ---
 
@@ -89,7 +89,7 @@ The [Front Matter VS Code extension](https://frontmatter.codes/) provides a CMS-
 
 ## Hosting
 
-The build output is a fully static site. It can be deployed to GitHub Pages, Vercel, Netlify, or any static file server. The included GitHub Actions workflow (`static.yml`) handles deployment to GitHub Pages on push to `main`.
+The build output is a fully static site. The included GitHub Actions workflow (`static.yml`) handles deployment to GitHub Pages on push to `main`.
 
 ## License
 

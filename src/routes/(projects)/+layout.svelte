@@ -26,7 +26,7 @@
 				<div class="note">Started on {dateformat(project.date, 'UTC:dd mmmm yyyy')}</div>
 				{#if project.tags?.length}
 					<div class="tags">
-						{#each project.tags as tag}
+						{#each project.tags as tag (tag)}
 							<Tag>{tag}</Tag>
 						{/each}
 					</div>

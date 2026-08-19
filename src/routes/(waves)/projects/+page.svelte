@@ -13,7 +13,7 @@
 <div class="container">
 	<ContentSection title="All Projects" description="Check out what I've been working on.">
 		<div class="grid">
-			{#each projects as project}
+			{#each projects as project (project.slug)}
 				<ProjectCard
 					title={project.title}
 					coverImage={project.coverImage}

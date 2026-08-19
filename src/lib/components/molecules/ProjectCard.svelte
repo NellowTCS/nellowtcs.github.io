@@ -27,7 +27,7 @@
 	<div class="footer" slot="footer">
 		{#if tags?.length}
 			<div class="tags">
-				{#each tags.slice(0, 3) as tag}
+				{#each tags.slice(0, 3) as tag (tag)}
 					<Tag>{tag}</Tag>
 				{/each}
 			</div>

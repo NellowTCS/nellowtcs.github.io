@@ -1,7 +1,7 @@
 <script lang="ts">
 	export let color: string;
 	export let size: number;
-	export let style: any;
+	export let style: { top: string | number; left: string | number };
 </script>
 
 <div class="wrapper" style="top: {style.top}; left: {style.left};">

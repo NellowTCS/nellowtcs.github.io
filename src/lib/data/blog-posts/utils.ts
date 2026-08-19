@@ -1,11 +1,8 @@
-// Disabling eslint because importing Prism is needed
-// even if not directly used in this file
-// eslint-disable-next-line no-unused-vars
 import Prism from 'prismjs';
-// Here we assign it to a variable so the import above
-// is not removed automatically on build
-const ifYouRemoveMeTheBuildFails = Prism;
+// eslint-disable-next-line @typescript-eslint/no-unused-vars -- side-effect import, Prism must not be tree-shaken
+const _prism = Prism;
 import 'prism-svelte';
+import type { Component } from 'svelte';
 import { render as svelteRender } from 'svelte/server';
 import readingTime from 'reading-time/lib/reading-time';
 import striptags from 'striptags';
@@ -20,7 +17,7 @@ export const importPosts = (render = false) => {
 	const posts: BlogPost[] = [];
 	for (const path in imports) {
 		if (path.includes('/(projects)/')) continue;
-		const post = imports[path] as any;
+		const post = imports[path] as { metadata: Record<string, unknown>; default?: Component };
 		if (post) {
 			posts.push({
 				...post.metadata,

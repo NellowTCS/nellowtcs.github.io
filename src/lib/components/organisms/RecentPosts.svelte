@@ -17,7 +17,7 @@
 		<Button href="/blog">View More</Button>
 	</div>
 	<div class="grid">
-		{#each posts as post}
+		{#each posts as post (post.slug)}
 			<BlogPostCard
 				slug={post.slug}
 				title={post.title}

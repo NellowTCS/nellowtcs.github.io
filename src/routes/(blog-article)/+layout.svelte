@@ -87,7 +87,7 @@
 					{/if}
 					{#if post.tags?.length}
 						<div class="tags">
-							{#each post.tags as tag}
+							{#each post.tags as tag (tag)}
 								<Tag>{tag}</Tag>
 							{/each}
 						</div>

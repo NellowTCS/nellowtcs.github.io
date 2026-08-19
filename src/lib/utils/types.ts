@@ -5,15 +5,13 @@ export type SparkleType = {
 	createdAt: number;
 	color: string;
 	size: number;
-	style: any;
+	style: { top: string | number; left: string | number };
 };
 
 export type TagType = {
 	label: string;
 	color?: 'primary' | 'secondary';
 };
-
-export type SocialLink = {};
 
 export type Feature = {
 	name: string;

@@ -1,7 +1,6 @@
 export const redirects: Record<string, string> = {
-	'/jsmodules': '/JSModules',
-	'/cydsim': '/CYDSim',
-	'/cydsim/espemucore': '/CYDSim/ESPEmuCore'
-
+	'/jsmodules': '/MiniRepos',
+	'/JSModules': '/MiniRepos',
+	'/minirepos': '/MiniRepos'
 	// add more redirects here
 };
