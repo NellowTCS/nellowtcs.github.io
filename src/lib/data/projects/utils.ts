@@ -10,7 +10,11 @@ export const importProjects = (render = false) => {
 
 	const projects: Project[] = [];
 	for (const path in imports) {
-		if (path.includes('/(projects)/')) {
+		if (
+			path.includes('/projects/') &&
+			!path.endsWith('+layout.server.ts') &&
+			!path.endsWith('+layout.svelte')
+		) {
 			const project = imports[path] as { metadata: Record<string, unknown>; default?: Component };
 			if (project) {
 				projects.push({

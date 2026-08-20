@@ -16,7 +16,7 @@ export const importPosts = (render = false) => {
 
 	const posts: BlogPost[] = [];
 	for (const path in imports) {
-		if (path.includes('/(projects)/')) continue;
+		if (path.includes('/(projects)/') || path.includes('/projects/')) continue;
 		const post = imports[path] as { metadata: Record<string, unknown>; default?: Component };
 		if (post) {
 			posts.push({

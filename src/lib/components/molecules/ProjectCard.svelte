@@ -10,9 +10,12 @@
 	export let tags: string[] | undefined;
 	export let link: string | undefined = undefined;
 	export let repo: string | undefined = undefined;
+	export let docs: string | undefined = undefined;
+	export let npm: string | undefined = undefined;
+	export let cargo: string | undefined = undefined;
 </script>
 
-<Card href="/{slug}" additionalClass="project-card {!coverImage ? 'no-image' : ''}">
+<Card href="/projects/{slug}" additionalClass="project-card {!coverImage ? 'no-image' : ''}">
 	<div class="image" slot="image">
 		{#if coverImage}
 			<Image src={coverImage} alt="Cover image of this project" />
@@ -38,6 +41,25 @@
 			{/if}
 			{#if repo}
 				<a href={repo} target="_blank" rel="noopener noreferrer" class="link secondary">GitHub</a>
+			{/if}
+			{#if npm}
+				<a
+					href="https://www.npmjs.com/package/{npm}"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="link tertiary">npm</a
+				>
+			{/if}
+			{#if cargo}
+				<a
+					href="https://crates.io/crates/{cargo}"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="link tertiary">crates.io</a
+				>
+			{/if}
+			{#if docs}
+				<a href={docs} target="_blank" rel="noopener noreferrer" class="link">Docs</a>
 			{/if}
 		</div>
 	</div>
@@ -104,6 +126,11 @@
 	.link.secondary {
 		background-color: rgb(var(--color--secondary-rgb));
 		color: var(--color--secondary-contrast);
+	}
+
+	.link.tertiary {
+		background-color: rgba(var(--color--text-rgb), 0.1);
+		color: var(--color--text);
 	}
 
 	:global(.project-card .image img) {

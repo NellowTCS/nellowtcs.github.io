@@ -44,17 +44,17 @@ const xml = (posts: BlogPost[]) => `
 			.map(
 				(post) => `
         <item>
-          <guid>${siteBaseUrl}/${post.slug}</guid>
+          <guid>${siteBaseUrl}/blog/${post.slug}</guid>
           <title>${post.title}</title>
           <description>${post.excerpt}</description>
-          <link>${siteBaseUrl}/${post.slug}</link>
+          <link>${siteBaseUrl}/blog/${post.slug}</link>
           <pubDate>${dateformat(post.date, 'ddd, dd mmm yyyy HH:MM:ss o')}</pubDate>
           ${post.tags ? post.tags.map((tag) => `<category>${tag}</category>`).join('') : ''}
           <content:encoded><![CDATA[
             <div style="margin: 50px 0; font-style: italic;">
               If anything looks wrong, 
               <strong>
-                <a href="${siteBaseUrl}/${post.slug}">
+                <a href="${siteBaseUrl}/blog/${post.slug}">
                   read on the site!
                 </a>
               </strong>

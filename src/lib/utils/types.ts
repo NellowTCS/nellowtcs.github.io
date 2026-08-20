@@ -46,4 +46,7 @@ export type Project = {
 	coverImage: string | undefined;
 	link: string | undefined;
 	repo: string | undefined;
+	docs: string | undefined;
+	npm: string | undefined;
+	cargo: string | undefined;
 };
