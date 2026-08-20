@@ -1,5 +1,6 @@
 ---
 title: Ethashi
+coverImage: /images/projects/ethashi.png
 slug: ethashi
 date: 2025-01-01
 hidden: true

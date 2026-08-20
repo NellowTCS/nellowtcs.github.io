@@ -16,7 +16,7 @@ A guide to adding touchscreen support for any Waveshare touchscreen display to v
 
 This apparently works on any OS with a /boot/firmware/config.txt, or if the OS is _very_ old, /boot/config.txt, but I have yet to check every single OS, for obvious reasons.
 
-# Options:
+## Options
 
 - Add `dtoverlay=ads7846,cs=1,penirq=25,penirq_pull=2,speed=50000,keep_vref_on=0,swapxy=0,pmax=255,xohms=150,xmin=200,xmax=3900,ymin=200,ymax=3900` to your /boot/firmware/config.txt file.
   [credit](https://forums.raspberrypi.com/viewtopic.php?t=375432)

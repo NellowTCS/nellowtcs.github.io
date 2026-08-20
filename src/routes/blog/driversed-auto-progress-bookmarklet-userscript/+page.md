@@ -1,8 +1,8 @@
 ---
-title: DriversEd.com Auto Progress Bookmarklet and Userscript
+title: DriversEd Auto-Next Bookmarklet
 slug: driversed-auto-progress-bookmarklet-userscript
 coverImage: '/images/posts/driversed-com-logo.png'
-excerpt: ''
+excerpt: 'A bookmarklet, console script, and userscript that automatically clicks through DriversEd.com lessons when the timer allows it.'
 date: 2025-07-30T21:00:00-06:00
 updated: null
 hidden: false

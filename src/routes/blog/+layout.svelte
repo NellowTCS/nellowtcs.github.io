@@ -63,6 +63,10 @@
 		<meta property="og:title" content="{post.title} - {title}" />
 		<meta name="twitter:title" content="{post.title} - {title}" />
 
+		<meta property="og:url" content="{siteBaseUrl}blog/{post.slug}" />
+		<meta property="og:type" content="article" />
+		<meta name="twitter:card" content="summary_large_image" />
+
 		{#if post.coverImage}
 			<meta property="og:image" content="{siteBaseUrl}{post.coverImage}" />
 			<meta name="twitter:image" content="{siteBaseUrl}{post.coverImage}" />

@@ -1,5 +1,6 @@
 ---
 title: TactileWeb
+coverImage: /images/projects/tactileweb.png
 slug: tactileweb
 date: 2025-01-01
 excerpt: A text-based web browser that runs on ESP32 microcontrollers, fetching and displaying web pages on a tiny screen.

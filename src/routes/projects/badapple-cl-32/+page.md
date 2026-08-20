@@ -1,5 +1,6 @@
 ---
 title: BadApple-CL-32
+coverImage: /images/projects/badapple-cl-32.png
 slug: badapple-cl-32
 date: 2025-01-01
 hidden: true

@@ -17,12 +17,14 @@
 		name="description"
 		content="Open source projects, libraries, and tools by NellowTCS. Browser engines, Obsidian plugins, Rust parsers, embedded systems, and more."
 	/>
+	<link rel="canonical" href="{siteBaseUrl}projects" />
 	<meta property="og:title" content="Projects | NellowTCS" />
 	<meta
 		property="og:description"
 		content="Open source projects, libraries, and tools by NellowTCS. Browser engines, Obsidian plugins, Rust parsers, embedded systems, and more."
 	/>
 	<meta property="og:url" content="{siteBaseUrl}projects" />
+	<meta property="og:type" content="website" />
 	<meta name="twitter:title" content="Projects | NellowTCS" />
 	<meta
 		name="twitter:description"
@@ -31,7 +33,8 @@
 </svelte:head>
 
 <div class="container">
-	<ContentSection title="All Projects" description="Check out what I've been working on.">
+	<h1>Projects</h1>
+	<ContentSection description="Check out what I've been working on.">
 		<div class="grid">
 			{#each projects as project (project.slug)}
 				<ProjectCard

@@ -1,5 +1,6 @@
 ---
 title: Generic-Platformer
+coverImage: /images/projects/generic-platformer.png
 slug: generic-platformer
 date: 2025-01-01
 hidden: true

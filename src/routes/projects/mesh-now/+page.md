@@ -1,5 +1,6 @@
 ---
 title: Mesh-NOW
+coverImage: /images/projects/mesh-now.png
 slug: mesh-now
 date: 2025-04-01
 excerpt: A serverless mesh network built on ESP-NOW, letting ESP32 devices communicate directly without any Wi-Fi infrastructure.

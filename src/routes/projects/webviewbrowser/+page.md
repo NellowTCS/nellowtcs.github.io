@@ -1,5 +1,6 @@
 ---
 title: WebViewBrowser
+coverImage: /images/projects/webviewbrowser.png
 slug: webviewbrowser
 date: 2025-01-01
 excerpt: A web browser written entirely in AppleScript using Apple's Script Editor and WebKit.

@@ -1,5 +1,6 @@
 ---
 title: OpenTabSync
+coverImage: /images/projects/opentabsync.png
 slug: opentabsync
 date: 2025-01-01
 hidden: true

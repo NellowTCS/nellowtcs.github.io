@@ -1,6 +1,7 @@
 <script lang="ts">
 	import BlogPostCard from '$lib/components/molecules/BlogPostCard.svelte';
 	import ContentSection from '$lib/components/organisms/ContentSection.svelte';
+	import { siteBaseUrl } from '$lib/data/meta';
 	import type { BlogPost } from '$lib/utils/types';
 
 	export let data: {
@@ -10,8 +11,17 @@
 	let { posts } = data;
 </script>
 
+<svelte:head>
+	<title>Blog | NellowTCS</title>
+	<link rel="canonical" href="{siteBaseUrl}blog" />
+	<meta property="og:url" content="{siteBaseUrl}blog" />
+	<meta property="og:title" content="Blog | NellowTCS" />
+	<meta name="twitter:title" content="Blog | NellowTCS" />
+</svelte:head>
+
 <div class="container">
-	<ContentSection title="All Blog Posts">
+	<h1>Blog</h1>
+	<ContentSection description="Thoughts on code, tools, and whatever else I've been up to.">
 		<div class="grid">
 			{#each posts as post (post.slug)}
 				<BlogPostCard

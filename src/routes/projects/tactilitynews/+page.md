@@ -1,5 +1,6 @@
 ---
 title: TactilityNews
+coverImage: /images/projects/tactilitynews.png
 slug: tactilitynews
 date: 2025-01-01
 excerpt: A news reader app for the Tactility framework, displaying articles on ESP32 touchscreen devices.

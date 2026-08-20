@@ -1,5 +1,6 @@
 ---
 title: tuiro
+coverImage: /images/projects/tuiro.png
 slug: tuiro
 date: 2025-01-01
 excerpt: A zero-dependency Python library for producing clean, colorful terminal output with spinners, banners, and status messages.

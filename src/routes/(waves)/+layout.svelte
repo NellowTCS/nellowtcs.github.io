@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-	<link rel="“canonical”" href={siteBaseUrl} />
+	<link rel="canonical" href={siteBaseUrl} />
 	<meta name="keywords" content={keywords.join(', ')} />
 
 	<meta name="description" content={description} />
@@ -21,6 +21,8 @@
 	<meta property="og:image" content={image} />
 	<meta name="twitter:image" content={image} />
 
+	<meta property="og:url" content={siteBaseUrl} />
+	<meta property="og:type" content="website" />
 	<meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 

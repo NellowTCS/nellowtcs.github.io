@@ -1,5 +1,6 @@
 ---
 title: html_parser
+coverImage: /images/projects/html-parser.png
 slug: html-parser
 date: 2025-01-01
 excerpt: A fast, zero-dependency HTML tag scanner written in ANSI C, designed for embedding in larger applications.
