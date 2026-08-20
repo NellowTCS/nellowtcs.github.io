@@ -10,7 +10,7 @@
 		posts: BlogPost[];
 	};
 
-	let { features, posts } = data;
+	let { posts } = data;
 </script>
 
 <div class="container">

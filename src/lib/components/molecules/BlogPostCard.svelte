@@ -14,7 +14,7 @@
 </script>
 
 <Card
-	href="/{slug}"
+	href="/blog/{slug}"
 	target="_self"
 	additionalClass="blog-post-card {!showImage || !coverImage ? 'no-image' : ''}"
 >
@@ -39,7 +39,7 @@
 	<div class="footer" slot="footer">
 		{#if tags?.length}
 			<div class="tags">
-				{#each tags.slice(0, 2) as tag}
+				{#each tags.slice(0, 2) as tag (tag)}
 					<Tag>{tag}</Tag>
 				{/each}
 			</div>

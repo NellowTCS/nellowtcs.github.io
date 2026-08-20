@@ -2,6 +2,7 @@
 	import ContentSection from '$lib/components/organisms/ContentSection.svelte';
 	import ProjectCard from '$lib/components/molecules/ProjectCard.svelte';
 	import type { Project } from '$lib/utils/types';
+	import { siteBaseUrl } from '$lib/data/meta';
 
 	export let data: {
 		projects: Project[];
@@ -10,10 +11,29 @@
 	let { projects } = data;
 </script>
 
+<svelte:head>
+	<title>Projects | NellowTCS</title>
+	<meta
+		name="description"
+		content="Open source projects, libraries, and tools by NellowTCS. Browser engines, Obsidian plugins, Rust parsers, embedded systems, and more."
+	/>
+	<meta property="og:title" content="Projects | NellowTCS" />
+	<meta
+		property="og:description"
+		content="Open source projects, libraries, and tools by NellowTCS. Browser engines, Obsidian plugins, Rust parsers, embedded systems, and more."
+	/>
+	<meta property="og:url" content="{siteBaseUrl}projects" />
+	<meta name="twitter:title" content="Projects | NellowTCS" />
+	<meta
+		name="twitter:description"
+		content="Open source projects, libraries, and tools by NellowTCS. Browser engines, Obsidian plugins, Rust parsers, embedded systems, and more."
+	/>
+</svelte:head>
+
 <div class="container">
 	<ContentSection title="All Projects" description="Check out what I've been working on.">
 		<div class="grid">
-			{#each projects as project}
+			{#each projects as project (project.slug)}
 				<ProjectCard
 					title={project.title}
 					coverImage={project.coverImage}
@@ -22,6 +42,9 @@
 					tags={project.tags}
 					link={project.link}
 					repo={project.repo}
+					docs={project.docs}
+					npm={project.npm}
+					cargo={project.cargo}
 				/>
 			{/each}
 		</div>

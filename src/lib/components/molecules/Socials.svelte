@@ -1,7 +1,6 @@
 <script>
 	import GitHubIcon from '$lib/icons/socials/github.svelte';
 	import EmailIcon from '$lib/icons/socials/email.svelte';
-	import RssIcon from '$lib/icons/rss.svelte';
 	import MastodonIcon from '$lib/icons/socials/mastodon.svelte';
 </script>
 
