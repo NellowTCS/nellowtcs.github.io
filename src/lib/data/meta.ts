@@ -6,7 +6,8 @@ export const siteBaseUrl = 'https://nellowtcs.me/';
 
 export const keywords = ['Developer', 'Projects', 'Blog', 'Web', 'Static Site'];
 
-export const description = 'The personal site and blog of NellowTCS: open source projects, browser engines, Rust parsers, and whatever else I\'m working on.';
+export const description =
+	"The personal site and blog of NellowTCS: open source projects, browser engines, Rust parsers, and whatever else I'm working on.";
 
 export const title = 'Home | NellowTCS';
 
