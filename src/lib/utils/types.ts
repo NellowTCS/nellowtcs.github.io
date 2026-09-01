@@ -20,6 +20,8 @@ export type Feature = {
 	tags: TagType[];
 };
 
+export type BlogPostMetadata = Omit<BlogPost, 'html' | 'readingTime' | 'relatedPosts'>;
+
 export type BlogPost = {
 	tags: string[];
 	keywords: string[];
@@ -34,6 +36,8 @@ export type BlogPost = {
 	relatedPosts: BlogPost[];
 	coverImage: string | undefined;
 };
+
+export type ProjectMetadata = Omit<Project, 'html'>;
 
 export type Project = {
 	tags: string[];

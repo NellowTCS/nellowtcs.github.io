@@ -55,22 +55,6 @@
 
 	@media screen and (prefers-reduced-motion: no-preference) {
 		.animated {
-			#icon {
-				> path {
-					--text-color: var(--color--text-shade);
-					stroke-width: 2;
-					animation: svg-text-stroke 3s;
-				}
-
-				#darker {
-					> path {
-						--text-color: var(--color--text);
-						stroke-width: 2;
-						animation: svg-text-stroke 3s;
-					}
-				}
-			}
-
 			#text {
 				animation: svg-text-stroke 3s;
 				stroke-width: 2;

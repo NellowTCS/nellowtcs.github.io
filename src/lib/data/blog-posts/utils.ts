@@ -6,7 +6,7 @@ import type { Component } from 'svelte';
 import { render as svelteRender } from 'svelte/server';
 import readingTime from 'reading-time/lib/reading-time';
 import striptags from 'striptags';
-import type { BlogPost } from '$lib/utils/types';
+import type { BlogPost, BlogPostMetadata } from '$lib/utils/types';
 
 export const importPosts = (render = false) => {
 	const blogImports = import.meta.glob('$routes/*/*/*.md', { eager: true });
@@ -17,12 +17,12 @@ export const importPosts = (render = false) => {
 	const posts: BlogPost[] = [];
 	for (const path in imports) {
 		if (path.includes('/(projects)/') || path.includes('/projects/')) continue;
-		const post = imports[path] as { metadata: Record<string, unknown>; default?: Component };
+		const post = imports[path] as { metadata: BlogPostMetadata; default?: Component };
 		if (post) {
 			posts.push({
 				...post.metadata,
 				html: render && post.default ? svelteRender(post.default).html : undefined
-			});
+			} as BlogPost);
 		}
 	}
 
