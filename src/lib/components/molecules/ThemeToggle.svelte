@@ -68,9 +68,6 @@
 			#moon,
 			#sun {
 				fill: var(--color--primary);
-				> * {
-					filter: drop-shadow(0px 0px 3px var(--color--primary));
-				}
 			}
 
 			#sun-beams {
