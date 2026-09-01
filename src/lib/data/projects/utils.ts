@@ -1,6 +1,6 @@
 import type { Component } from 'svelte';
 import { render as svelteRender } from 'svelte/server';
-import type { Project } from '$lib/utils/types';
+import type { Project, ProjectMetadata } from '$lib/utils/types';
 
 export const importProjects = (render = false) => {
 	const blogImports = import.meta.glob('$routes/*/*/*.md', { eager: true });
@@ -15,12 +15,13 @@ export const importProjects = (render = false) => {
 			!path.endsWith('+layout.server.ts') &&
 			!path.endsWith('+layout.svelte')
 		) {
-			const project = imports[path] as { metadata: Record<string, unknown>; default?: Component };
+			const project = imports[path] as { metadata: ProjectMetadata; default?: Component };
 			if (project) {
+				// Frontmatter metadata plus rendered html is the complete Project.
 				projects.push({
 					...project.metadata,
 					html: render && project.default ? svelteRender(project.default).html : undefined
-				});
+				} as Project);
 			}
 		}
 	}
