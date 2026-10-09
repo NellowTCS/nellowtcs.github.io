@@ -1,8 +1,8 @@
 <script lang="ts">
-	import ContentSection from '$lib/components/organisms/ContentSection.svelte';
-	import ProjectCard from '$lib/components/molecules/ProjectCard.svelte';
-	import type { Project } from '$lib/utils/types';
-	import { siteBaseUrl } from '$lib/data/meta';
+	import ContentSection from '#lib/components/organisms/ContentSection.svelte';
+	import ProjectCard from '#lib/components/molecules/ProjectCard.svelte';
+	import type { Project } from '#lib/utils/types';
+	import { siteBaseUrl } from '#lib/data/meta';
 
 	export let data: {
 		projects: Project[];
@@ -55,7 +55,7 @@
 </div>
 
 <style lang="scss">
-	@use '$lib/scss/mixins' as *;
+	@use '#lib/scss/mixins' as *;
 
 	.grid {
 		width: 100%;

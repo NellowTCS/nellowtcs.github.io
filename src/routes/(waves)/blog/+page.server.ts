@@ -1,4 +1,4 @@
-import { filteredPosts } from '$lib/data/blog-posts';
+import { filteredPosts } from '#lib/data/blog-posts';
 
 export async function load() {
 	return {

@@ -12,7 +12,7 @@ featured: true
 ---
 
 <script>
-  import CodeBlock from "$lib/components/molecules/CodeBlock.svelte";
+  import CodeBlock from "#lib/components/molecules/CodeBlock.svelte";
 </script>
 
 Over the weekend, I got to work making something for the PocketMage.  

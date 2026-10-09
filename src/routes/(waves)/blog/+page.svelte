@@ -1,8 +1,8 @@
 <script lang="ts">
-	import BlogPostCard from '$lib/components/molecules/BlogPostCard.svelte';
-	import ContentSection from '$lib/components/organisms/ContentSection.svelte';
-	import { siteBaseUrl } from '$lib/data/meta';
-	import type { BlogPost } from '$lib/utils/types';
+	import BlogPostCard from '#lib/components/molecules/BlogPostCard.svelte';
+	import ContentSection from '#lib/components/organisms/ContentSection.svelte';
+	import { siteBaseUrl } from '#lib/data/meta';
+	import type { BlogPost } from '#lib/utils/types';
 
 	export let data: {
 		posts: BlogPost[];
@@ -38,7 +38,7 @@
 </div>
 
 <style lang="scss">
-	@use '$lib/scss/mixins' as *;
+	@use '#lib/scss/mixins' as *;
 
 	.grid {
 		width: 100%;

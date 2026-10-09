@@ -1,12 +1,12 @@
 <script lang="ts">
-	import Header from '$lib/components/organisms/Header.svelte';
-	import Footer from '$lib/components/organisms/Footer.svelte';
-	import Tag from '$lib/components/atoms/Tag.svelte';
-	import Button from '$lib/components/atoms/Button.svelte';
-	import Image from '$lib/components/atoms/Image.svelte';
+	import Header from '#lib/components/organisms/Header.svelte';
+	import Footer from '#lib/components/organisms/Footer.svelte';
+	import Tag from '#lib/components/atoms/Tag.svelte';
+	import Button from '#lib/components/atoms/Button.svelte';
+	import Image from '#lib/components/atoms/Image.svelte';
 	import dateformat from 'dateformat';
-	import type { Project } from '$lib/utils/types';
-	import { siteBaseUrl, title as siteTitle } from '$lib/data/meta';
+	import type { Project } from '#lib/utils/types';
+	import { siteBaseUrl, title as siteTitle } from '#lib/data/meta';
 
 	export let data: { project: Project };
 	$: ({ project } = data);
@@ -118,7 +118,7 @@
 </div>
 
 <style lang="scss">
-	@use '$lib/scss/mixins' as *;
+	@use '#lib/scss/mixins' as *;
 
 	.article-layout {
 		--body-background-color: var(--color--post-page-background);

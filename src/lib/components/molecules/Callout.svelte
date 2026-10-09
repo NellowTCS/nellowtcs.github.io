@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Alert from '$lib/icons/alert.svelte';
-	import Check from '$lib/icons/check.svelte';
-	import Info from '$lib/icons/info.svelte';
+	import Alert from '#lib/icons/alert.svelte';
+	import Check from '#lib/icons/check.svelte';
+	import Info from '#lib/icons/info.svelte';
 
 	export let type: string | undefined = undefined;
 </script>

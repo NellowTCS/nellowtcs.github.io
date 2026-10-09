@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { HttpRegex } from '$lib/utils/regex';
+	import { HttpRegex } from '#lib/utils/regex';
 
 	export let color: 'primary' | 'secondary' = 'primary';
 	export let style: 'solid' | 'understated' | 'clear' = 'solid';

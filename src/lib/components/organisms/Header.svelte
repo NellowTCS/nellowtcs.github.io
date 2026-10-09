@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Logo from '$lib/components/atoms/Logo.svelte';
-	import ThemeToggle from '$lib/components/molecules/ThemeToggle.svelte';
-	import RssLink from '$lib/components/atoms/RssLink.svelte';
+	import Logo from '#lib/components/atoms/Logo.svelte';
+	import ThemeToggle from '#lib/components/molecules/ThemeToggle.svelte';
+	import RssLink from '#lib/components/atoms/RssLink.svelte';
 
 	export let showBackground = false;
 </script>
@@ -21,7 +21,7 @@
 </header>
 
 <style lang="scss">
-	@use '$lib/scss/breakpoints' as *;
+	@use '#lib/scss/breakpoints' as *;
 
 	header {
 		position: relative;

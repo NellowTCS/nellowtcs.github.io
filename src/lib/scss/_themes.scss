@@ -1,4 +1,4 @@
-@use '$lib/scss/mixins' as *;
+@use './mixins' as *;
 
 @mixin base-theme {
 	@include define-color('primary', #007bff); // hsl(215, 70%, 50%)

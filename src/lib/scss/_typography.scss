@@ -1,4 +1,4 @@
-@use '$lib/scss/breakpoints' as *;
+@use './breakpoints' as *;
 
 a {
 	color: var(--color--text);

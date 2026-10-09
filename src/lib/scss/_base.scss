@@ -1,4 +1,4 @@
-@use '$lib/scss/mixins' as *;
+@use './mixins' as *;
 
 .container {
 	@include padded-container;

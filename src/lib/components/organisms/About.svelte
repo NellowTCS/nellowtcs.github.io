@@ -1,6 +1,6 @@
 <script>
-	import SparklingHighlight from '$lib/components/molecules/SparklingHighlight.svelte';
-	import Socials from '$lib/components/molecules/Socials.svelte';
+	import SparklingHighlight from '#lib/components/molecules/SparklingHighlight.svelte';
+	import Socials from '#lib/components/molecules/Socials.svelte';
 	import Image from '../atoms/Image.svelte';
 </script>
 
@@ -29,7 +29,7 @@
 </section>
 
 <style lang="scss">
-	@use '$lib/scss/breakpoints' as *;
+	@use '#lib/scss/breakpoints' as *;
 
 	#about {
 		position: relative;

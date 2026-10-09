@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Button from '$lib/components/atoms/Button.svelte';
+	import Button from '#lib/components/atoms/Button.svelte';
 </script>
 
 <section class="subscribe-section">
@@ -16,7 +16,7 @@
 </section>
 
 <style lang="scss">
-	@use '$lib/scss/breakpoints' as *;
+	@use '#lib/scss/breakpoints' as *;
 
 	.subscribe-section {
 		width: 100%;

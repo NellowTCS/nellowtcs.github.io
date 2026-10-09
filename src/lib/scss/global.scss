@@ -1,14 +1,14 @@
-@forward '$lib/scss/reset';
-@forward '$lib/scss/variables';
-@forward '$lib/scss/themes';
-@forward '$lib/scss/breakpoints';
-@forward '$lib/scss/functions';
-@forward '$lib/scss/mixins';
-@forward '$lib/scss/base';
-@forward '$lib/scss/typography';
-@forward '$lib/scss/markdown';
-@forward '$lib/scss/code-highlights';
-@forward '$lib/scss/animations';
+@forward './reset';
+@forward './variables';
+@forward './themes';
+@forward './breakpoints';
+@forward './functions';
+@forward './mixins';
+@forward './base';
+@forward './typography';
+@forward './markdown';
+@forward './code-highlights';
+@forward './animations';
 
 @use '@fontsource/inter' as *;
 @use '@fontsource/inter/600.css' as *;

@@ -1,4 +1,4 @@
-import { allProjects } from '$lib/data/projects';
+import { allProjects } from '#lib/data/projects';
 
 export async function load({ url }: { url: { pathname: string } }) {
 	const { pathname } = url;

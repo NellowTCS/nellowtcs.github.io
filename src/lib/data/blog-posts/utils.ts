@@ -6,7 +6,7 @@ import type { Component } from 'svelte';
 import { render as svelteRender } from 'svelte/server';
 import readingTime from 'reading-time/lib/reading-time';
 import striptags from 'striptags';
-import type { BlogPost, BlogPostMetadata } from '$lib/utils/types';
+import type { BlogPost, BlogPostMetadata } from '#lib/utils/types';
 
 export const importPosts = (render = false) => {
 	const blogImports = import.meta.glob('$routes/*/*/*.md', { eager: true });

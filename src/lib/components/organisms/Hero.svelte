@@ -1,6 +1,6 @@
 <script>
-	import GitHubIcon from '$lib/icons/socials/github.svelte';
-	import Button from '$lib/components/atoms/Button.svelte';
+	import GitHubIcon from '#lib/icons/socials/github.svelte';
+	import Button from '#lib/components/atoms/Button.svelte';
 	import Sparkles from '../atoms/Sparkles.svelte';
 </script>
 
@@ -21,7 +21,7 @@
 </section>
 
 <style lang="scss">
-	@use '$lib/scss/breakpoints' as *;
+	@use '#lib/scss/breakpoints' as *;
 
 	#hero {
 		display: flex;

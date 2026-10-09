@@ -1,15 +1,15 @@
 <script lang="ts">
-	import Header from '$lib/components/organisms/Header.svelte';
-	import Footer from '$lib/components/organisms/Footer.svelte';
-	import Tag from '$lib/components/atoms/Tag.svelte';
+	import Header from '#lib/components/organisms/Header.svelte';
+	import Footer from '#lib/components/organisms/Footer.svelte';
+	import Tag from '#lib/components/atoms/Tag.svelte';
 	import dateformat from 'dateformat';
 	import { onMount } from 'svelte';
 
-	import { keywords, siteBaseUrl, title } from '$lib/data/meta';
-	import type { BlogPost } from '$lib/utils/types';
-	import RelatedPosts from '$lib/components/organisms/RelatedPosts.svelte';
-	import Image from '$lib/components/atoms/Image.svelte';
-	import SubscribeForm from '$lib/components/organisms/SubscribeForm.svelte';
+	import { keywords, siteBaseUrl, title } from '#lib/data/meta';
+	import type { BlogPost } from '#lib/utils/types';
+	import RelatedPosts from '#lib/components/organisms/RelatedPosts.svelte';
+	import Image from '#lib/components/atoms/Image.svelte';
+	import SubscribeForm from '#lib/components/organisms/SubscribeForm.svelte';
 
 	export let data: { post: BlogPost };
 	$: ({ post } = data);
@@ -123,7 +123,7 @@
 </div>
 
 <style lang="scss">
-	@use '$lib/scss/mixins' as *;
+	@use '#lib/scss/mixins' as *;
 
 	.article-layout {
 		--body-background-color: var(--color--post-page-background);

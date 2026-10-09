@@ -1,8 +1,8 @@
 <script lang="ts">
-	import BlogPostCard from '$lib/components/molecules/BlogPostCard.svelte';
-	import ContentSection from '$lib/components/organisms/ContentSection.svelte';
-	import type { BlogPost } from '$lib/utils/types';
-	import Button from '$lib/components/atoms/Button.svelte';
+	import BlogPostCard from '#lib/components/molecules/BlogPostCard.svelte';
+	import ContentSection from '#lib/components/organisms/ContentSection.svelte';
+	import type { BlogPost } from '#lib/utils/types';
+	import Button from '#lib/components/atoms/Button.svelte';
 
 	export let posts: BlogPost[];
 </script>
@@ -31,7 +31,7 @@
 </ContentSection>
 
 <style lang="scss">
-	@use '$lib/scss/breakpoints' as *;
+	@use '#lib/scss/breakpoints' as *;
 
 	.grid {
 		width: 100%;

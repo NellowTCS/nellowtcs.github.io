@@ -1,6 +1,6 @@
 import type { Component } from 'svelte';
 import { render as svelteRender } from 'svelte/server';
-import type { Project, ProjectMetadata } from '$lib/utils/types';
+import type { Project, ProjectMetadata } from '#lib/utils/types';
 
 export const importProjects = (render = false) => {
 	const blogImports = import.meta.glob('$routes/*/*/*.md', { eager: true });

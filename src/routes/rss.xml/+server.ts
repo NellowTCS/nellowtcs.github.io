@@ -1,7 +1,7 @@
-import { description, siteBaseUrl, title } from '$lib/data/meta';
-import type { BlogPost } from '$lib/utils/types';
+import { description, siteBaseUrl, title } from '#lib/data/meta';
+import type { BlogPost } from '#lib/utils/types';
 import dateformat from 'dateformat';
-import { filterPosts, importPosts } from '$lib/data/blog-posts/utils';
+import { filterPosts, importPosts } from '#lib/data/blog-posts/utils';
 
 export const prerender = true;
 

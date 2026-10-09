@@ -34,9 +34,6 @@ const config = {
 	plugins: [
 		sveltekit({
 			adapter: adapter(),
-			alias: {
-				$lib: 'src/lib'
-			},
 			prerender: {
 				handleHttpError: 'warn'
 			},

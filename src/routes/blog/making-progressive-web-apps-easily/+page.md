@@ -16,7 +16,7 @@ keywords:
 ---
 
 <script>
-  import CodeBlock from "$lib/components/molecules/CodeBlock.svelte";
+  import CodeBlock from "#lib/components/molecules/CodeBlock.svelte";
 </script>
 
 This guide walks you through creating a **Progressive Web App (PWA)** with a custom install button. The app will:

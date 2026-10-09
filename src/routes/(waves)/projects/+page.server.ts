@@ -1,4 +1,4 @@
-import { filteredProjects } from '$lib/data/projects';
+import { filteredProjects } from '#lib/data/projects';
 
 export async function load() {
 	return {
