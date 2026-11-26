@@ -1,7 +1,7 @@
 # nellowtcs.github.io
 
 [![Built with SvelteKit](https://img.shields.io/badge/built%20with-SvelteKit-000000?logo=svelte)](https://kit.svelte.dev/)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-GNU/GPLv3-blue)](LICENSE)
 
 My personal blog and portfolio site, built with SvelteKit as a fully static site. Zero runtime JavaScript overhead, automatic dark mode, responsive across all viewports, and image optimization built in into the build pipeline.
 
@@ -93,4 +93,4 @@ The build output is a fully static site. The included GitHub Actions workflow (`
 
 ## License
 
-MIT. See [LICENSE](LICENSE).
+GNU GPL v3. See [LICENSE](LICENSE).
