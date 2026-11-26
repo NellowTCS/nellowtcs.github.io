@@ -22,7 +22,7 @@
 	</div>
 	<div class="image">
 		<figure>
-			<Image src="/images/frontpage.png" alt="Sample for the static template" />
+			<Image src="/images/frontpage.png" alt="Muzari music player showing an empty library" />
 			<figcaption>Muzari</figcaption>
 		</figure>
 	</div>
@@ -34,7 +34,8 @@
 	#about {
 		position: relative;
 		display: grid;
-		grid-template-columns: 500px 500px;
+		grid-template-columns: minmax(0, 500px) minmax(0, 360px);
+		column-gap: 20px;
 		align-items: center;
 		justify-content: space-between;
 		padding-bottom: 50px;
@@ -46,7 +47,7 @@
 		}
 
 		.info {
-			grid-column: 1; // move text to right column
+			grid-column: 1;
 			display: flex;
 			flex-direction: column;
 			gap: 10px;
@@ -83,11 +84,9 @@
 		}
 
 		.image {
-			grid-column: 2; // put image in left column
-			width: 500px;
-			height: 300px;
-			margin-left: 0;
-			margin-right: auto;
+			grid-column: 2;
+			width: min(100%, 360px);
+			margin: 0 auto;
 
 			@include for-phone-only {
 				grid-column: auto;
@@ -96,6 +95,12 @@
 			figure {
 				margin: 0;
 				text-align: center;
+			}
+
+			// The Image atom sizes to its parent; this portrait shot needs its own ratio.
+			:global(img) {
+				height: auto;
+				aspect-ratio: 3 / 5;
 			}
 
 			figcaption {
