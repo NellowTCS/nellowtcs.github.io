@@ -50,6 +50,8 @@
 			position: absolute;
 			right: 0;
 			top: -15px;
+			max-width: calc(100% - 30px);
+			overflow-wrap: anywhere;
 			background: inherit;
 			border-radius: 8px;
 			padding: 5px 10px;
@@ -58,6 +60,8 @@
 		}
 
 		.filename {
+			max-width: calc(100% - 30px);
+			overflow-wrap: anywhere;
 			background: inherit;
 			border-top-left-radius: 8px;
 			border-top-right-radius: 8px;

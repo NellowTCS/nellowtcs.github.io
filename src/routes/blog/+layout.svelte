@@ -5,7 +5,7 @@
 	import dateformat from 'dateformat';
 	import { onMount } from 'svelte';
 
-	import { keywords, siteBaseUrl, title } from '#lib/data/meta';
+	import { absoluteUrl, keywords, title } from '#lib/data/meta';
 	import type { BlogPost } from '#lib/utils/types';
 	import RelatedPosts from '#lib/components/organisms/RelatedPosts.svelte';
 	import Image from '#lib/components/atoms/Image.svelte';
@@ -57,19 +57,19 @@
 		<meta name="description" content={post.excerpt} />
 		<meta property="og:description" content={post.excerpt} />
 		<meta name="twitter:description" content={post.excerpt} />
-		<link rel="canonical" href="{siteBaseUrl}blog/{post.slug}" />
+		<link rel="canonical" href={absoluteUrl(`blog/${post.slug}`)} />
 
 		<title>{post.title} - {title}</title>
 		<meta property="og:title" content="{post.title} - {title}" />
 		<meta name="twitter:title" content="{post.title} - {title}" />
 
-		<meta property="og:url" content="{siteBaseUrl}blog/{post.slug}" />
+		<meta property="og:url" content={absoluteUrl(`blog/${post.slug}`)} />
 		<meta property="og:type" content="article" />
 		<meta name="twitter:card" content="summary_large_image" />
 
 		{#if post.coverImage}
-			<meta property="og:image" content="{siteBaseUrl}{post.coverImage}" />
-			<meta name="twitter:image" content="{siteBaseUrl}{post.coverImage}" />
+			<meta property="og:image" content={absoluteUrl(post.coverImage)} />
+			<meta name="twitter:image" content={absoluteUrl(post.coverImage)} />
 		{/if}
 	{/if}
 </svelte:head>

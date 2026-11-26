@@ -43,7 +43,7 @@
 			height: 50px;
 			top: 0;
 			left: 0;
-			transform: translate(calc(-50% - 1.5px), -50%);
+			transform: translate(-15%, -50%);
 			background: var(--color--post-page-background);
 			padding: 8px;
 			border-radius: 50%;

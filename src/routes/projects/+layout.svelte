@@ -6,7 +6,7 @@
 	import Image from '#lib/components/atoms/Image.svelte';
 	import dateformat from 'dateformat';
 	import type { Project } from '#lib/utils/types';
-	import { siteBaseUrl, title as siteTitle } from '#lib/data/meta';
+	import { absoluteUrl, title as siteTitle } from '#lib/data/meta';
 
 	export let data: { project: Project };
 	$: ({ project } = data);
@@ -17,7 +17,7 @@
 				'@type': 'SoftwareSourceCode',
 				name: project.title,
 				description: project.excerpt,
-				url: project.link || `${siteBaseUrl}projects/${project.slug}`,
+				url: project.link || absoluteUrl(`projects/${project.slug}`),
 				codeRepository: project.repo || undefined,
 				programmingLanguage: project.tags?.filter((t) =>
 					['TypeScript', 'JavaScript', 'Python', 'Rust', 'C', 'C++', 'Kotlin', 'Svelte'].includes(t)
@@ -27,7 +27,7 @@
 				author: {
 					'@type': 'Person',
 					name: 'NellowTCS',
-					url: siteBaseUrl
+					url: absoluteUrl()
 				}
 			}
 		: null;
@@ -39,17 +39,17 @@
 		<meta name="description" content={project.excerpt} />
 		<meta property="og:description" content={project.excerpt} />
 		<meta name="twitter:description" content={project.excerpt} />
-		<link rel="canonical" href="{siteBaseUrl}projects/{project.slug}" />
+		<link rel="canonical" href={absoluteUrl(`projects/${project.slug}`)} />
 
 		<meta property="og:title" content="{project.title} - Projects" />
 		<meta name="twitter:title" content="{project.title} - Projects" />
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content="{siteBaseUrl}projects/{project.slug}" />
+		<meta property="og:url" content={absoluteUrl(`projects/${project.slug}`)} />
 		<meta name="twitter:card" content="summary_large_image" />
 
 		{#if project.coverImage}
-			<meta property="og:image" content="{siteBaseUrl}{project.coverImage}" />
-			<meta name="twitter:image" content="{siteBaseUrl}{project.coverImage}" />
+			<meta property="og:image" content={absoluteUrl(project.coverImage)} />
+			<meta name="twitter:image" content={absoluteUrl(project.coverImage)} />
 		{/if}
 
 		{#if jsonLd}

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Sparkle from '#lib/components/atoms/SingleSparkle.svelte';
 	import type { SparkleType } from '#lib/utils/types';
-	import { onDestroy, onMount } from 'svelte';
+	import { onMount } from 'svelte';
 	const random = (min: number, max: number) => Math.floor(Math.random() * (max - min)) + min;
 
 	export let color: 'default' | 'primary' | 'secondary' = 'default';
@@ -26,31 +26,41 @@
 	};
 
 	let sparkles: SparkleType[] = [];
-	let sparklesInterval: ReturnType<typeof setInterval>;
+	let sparklesInterval: ReturnType<typeof setInterval> | undefined;
 
 	onMount(() => {
-		sparklesInterval = setInterval(() => {
+		const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+		const addSparkle = () => {
 			const now = Date.now();
-			// Create a new sparkle
 			const sparkle = generateSparkle();
-			// Clean up any "expired" sparkles
-			const nextSparkles = sparkles.filter((sparkle) => {
-				const delta = now - sparkle.createdAt;
-				return delta < 1500;
-			});
-			// Include our new sparkle
+			const nextSparkles = sparkles.filter((candidate) => now - candidate.createdAt < 1500);
 			nextSparkles.push(sparkle);
 			sparkles = nextSparkles;
-		}, 400);
-	});
+		};
 
-	onDestroy(() => {
-		clearInterval(sparklesInterval);
+		const syncMotionPreference = () => {
+			if (reducedMotion.matches) {
+				clearInterval(sparklesInterval);
+				sparklesInterval = undefined;
+				sparkles = [];
+			} else if (!sparklesInterval) {
+				sparklesInterval = setInterval(addSparkle, 400);
+			}
+		};
+
+		syncMotionPreference();
+		reducedMotion.addEventListener('change', syncMotionPreference);
+
+		return () => {
+			clearInterval(sparklesInterval);
+			reducedMotion.removeEventListener('change', syncMotionPreference);
+		};
 	});
 </script>
 
 <div class="sparkle-wrapper">
-	{#each sparkles as sparkle (String(sparkles.indexOf(sparkle)))}
+	{#each sparkles as sparkle (sparkle.id)}
 		<Sparkle color={sparkle.color} size={sparkle.size} style={sparkle.style} />
 	{/each}
 	<span class="slot-wrapper">

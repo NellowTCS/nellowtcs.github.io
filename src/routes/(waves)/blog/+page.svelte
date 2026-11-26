@@ -1,7 +1,7 @@
 <script lang="ts">
 	import BlogPostCard from '#lib/components/molecules/BlogPostCard.svelte';
 	import ContentSection from '#lib/components/organisms/ContentSection.svelte';
-	import { siteBaseUrl } from '#lib/data/meta';
+	import { absoluteUrl } from '#lib/data/meta';
 	import type { BlogPost } from '#lib/utils/types';
 
 	export let data: {
@@ -13,8 +13,8 @@
 
 <svelte:head>
 	<title>Blog | NellowTCS</title>
-	<link rel="canonical" href="{siteBaseUrl}blog" />
-	<meta property="og:url" content="{siteBaseUrl}blog" />
+	<link rel="canonical" href={absoluteUrl('blog')} />
+	<meta property="og:url" content={absoluteUrl('blog')} />
 	<meta property="og:title" content="Blog | NellowTCS" />
 	<meta name="twitter:title" content="Blog | NellowTCS" />
 </svelte:head>
@@ -50,7 +50,11 @@
 			grid-template-columns: 1fr;
 		}
 
-		@include for-tablet-landscape-up {
+		@include for-tablet-landscape-only {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		@include for-desktop-up {
 			// Select every 6 elements, starting from position 1
 			// And make it take up 6 columns
 			> :global(:nth-child(6n + 1)) {

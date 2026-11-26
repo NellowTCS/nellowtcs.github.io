@@ -6,10 +6,22 @@
 	<div class="subscribe-card">
 		<div class="content">
 			<h2>Subscribe to the newsletter</h2>
-			<p>Get notified when I publish new posts. No spam, unsubscribe anytime.</p>
+			<p id="subscribe-description">
+				Get notified when I publish new posts. No spam, unsubscribe anytime.
+			</p>
 		</div>
 		<form action="https://buttondown.com/api/emails/embed-subscribe/NellowTCS" method="post">
-			<input type="email" name="email" id="bd-email" placeholder="your@email.com" required />
+			<label class="sr-only" for="bd-email">Email address</label>
+			<input
+				type="email"
+				name="email"
+				id="bd-email"
+				placeholder="your@email.com"
+				autocomplete="email"
+				inputmode="email"
+				aria-describedby="subscribe-description"
+				required
+			/>
 			<Button type="submit">Subscribe</Button>
 		</form>
 	</div>
@@ -69,6 +81,18 @@
 		}
 	}
 
+	.sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
+
 	form {
 		display: flex;
 		flex-direction: column;
@@ -82,7 +106,8 @@
 
 		input[type='email'] {
 			flex: 1;
-			min-width: 200px;
+			min-width: 0;
+			width: 100%;
 			padding: 10px 16px;
 			border: 2px solid rgba(var(--color--text-rgb), 0.2);
 			border-radius: 20px;
@@ -96,7 +121,6 @@
 			}
 
 			&:focus {
-				outline: none;
 				border-color: var(--color--primary);
 			}
 		}

@@ -1,6 +1,7 @@
 <div class="waves-container">
 	<svg
 		class="waves"
+		aria-hidden="true"
 		xmlns="http://www.w3.org/2000/svg"
 		xmlns:xlink="http://www.w3.org/1999/xlink"
 		viewBox="0 24 150 28"
@@ -44,6 +45,7 @@
 		position: absolute;
 		width: 100%;
 		height: min(65vh, 500px);
+		overflow: hidden;
 
 		@include for-phone-only {
 			height: min(75vh, 400px);

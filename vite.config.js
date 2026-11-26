@@ -17,7 +17,11 @@ const rehypePlugins = /** @type {import('mdsvex').MdsvexOptions['rehypePlugins']
 			rehypeAutolinkHeadings,
 			{
 				behavior: 'prepend',
-				properties: { className: ['heading-link'], title: 'Permalink', ariaHidden: 'true' },
+				properties: {
+					className: ['heading-link'],
+					title: 'Permalink',
+					ariaLabel: 'Permalink to this heading'
+				},
 				content: {
 					type: 'element',
 					tagName: 'span',

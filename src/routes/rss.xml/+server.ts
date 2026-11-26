@@ -1,4 +1,4 @@
-import { description, siteBaseUrl, title } from '#lib/data/meta';
+import { absoluteUrl, description, title } from '#lib/data/meta';
 import type { BlogPost } from '#lib/utils/types';
 import dateformat from 'dateformat';
 import { filterPosts, importPosts } from '#lib/data/blog-posts/utils';
@@ -29,14 +29,14 @@ const xml = (posts: BlogPost[]) => `
 	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
 >
   <channel>
-    <atom:link href="${siteBaseUrl}/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="${absoluteUrl('rss.xml')}" rel="self" type="application/rss+xml" />
     <title>${title}</title>
-    <link>${siteBaseUrl}</link>
+    <link>${absoluteUrl()}</link>
     <description>${description}</description>
     <image>
-      <url>${siteBaseUrl}/favicons/favicon-32x32.png</url>
+      <url>${absoluteUrl('favicons/favicon-32x32.png')}</url>
       <title>${title}</title>
-      <link>${siteBaseUrl}</link>
+      <link>${absoluteUrl()}</link>
       <width>32</width>
       <height>32</height>
     </image>
@@ -44,17 +44,17 @@ const xml = (posts: BlogPost[]) => `
 			.map(
 				(post) => `
         <item>
-          <guid>${siteBaseUrl}/blog/${post.slug}</guid>
+          <guid>${absoluteUrl(`blog/${post.slug}`)}</guid>
           <title>${post.title}</title>
           <description>${post.excerpt}</description>
-          <link>${siteBaseUrl}/blog/${post.slug}</link>
+          <link>${absoluteUrl(`blog/${post.slug}`)}</link>
           <pubDate>${dateformat(post.date, 'ddd, dd mmm yyyy HH:MM:ss o')}</pubDate>
           ${post.tags ? post.tags.map((tag) => `<category>${tag}</category>`).join('') : ''}
           <content:encoded><![CDATA[
             <div style="margin: 50px 0; font-style: italic;">
               If anything looks wrong, 
               <strong>
-                <a href="${siteBaseUrl}/blog/${post.slug}">
+                <a href="${absoluteUrl(`blog/${post.slug}`)}">
                   read on the site!
                 </a>
               </strong>
@@ -64,12 +64,12 @@ const xml = (posts: BlogPost[]) => `
           ]]></content:encoded>
           ${
 						post.coverImage
-							? `<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="${siteBaseUrl}/${post.coverImage}"/>`
+							? `<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="${absoluteUrl(post.coverImage)}"/>`
 							: ''
 					}
           ${
 						post.coverImage
-							? `<media:content xmlns:media="http://search.yahoo.com/mrss/" medium="image" url="${siteBaseUrl}/${post.coverImage}"/>`
+							? `<media:content xmlns:media="http://search.yahoo.com/mrss/" medium="image" url="${absoluteUrl(post.coverImage)}"/>`
 							: ''
 					}          
         </item>

@@ -106,7 +106,7 @@
 			figcaption {
 				margin-top: 8px;
 				font-size: 0.9rem;
-				color: #666;
+				color: var(--color--text-shade);
 			}
 		}
 	}

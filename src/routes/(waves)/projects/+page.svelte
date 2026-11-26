@@ -2,7 +2,7 @@
 	import ContentSection from '#lib/components/organisms/ContentSection.svelte';
 	import ProjectCard from '#lib/components/molecules/ProjectCard.svelte';
 	import type { Project } from '#lib/utils/types';
-	import { siteBaseUrl } from '#lib/data/meta';
+	import { absoluteUrl } from '#lib/data/meta';
 
 	export let data: {
 		projects: Project[];
@@ -17,13 +17,13 @@
 		name="description"
 		content="Open source projects, libraries, and tools by NellowTCS. Browser engines, Obsidian plugins, Rust parsers, embedded systems, and more."
 	/>
-	<link rel="canonical" href="{siteBaseUrl}projects" />
+	<link rel="canonical" href={absoluteUrl('projects')} />
 	<meta property="og:title" content="Projects | NellowTCS" />
 	<meta
 		property="og:description"
 		content="Open source projects, libraries, and tools by NellowTCS. Browser engines, Obsidian plugins, Rust parsers, embedded systems, and more."
 	/>
-	<meta property="og:url" content="{siteBaseUrl}projects" />
+	<meta property="og:url" content={absoluteUrl('projects')} />
 	<meta property="og:type" content="website" />
 	<meta name="twitter:title" content="Projects | NellowTCS" />
 	<meta
@@ -67,7 +67,11 @@
 			grid-template-columns: 1fr;
 		}
 
-		@include for-tablet-landscape-up {
+		@include for-tablet-landscape-only {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		@include for-desktop-up {
 			> :global(:nth-child(6n + 1)) {
 				grid-column: span 6;
 			}

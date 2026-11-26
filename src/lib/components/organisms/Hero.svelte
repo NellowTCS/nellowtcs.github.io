@@ -55,7 +55,13 @@
 			}
 
 			@include for-phone-only {
-				display: none;
+				font-size: 1.1rem;
+				text-align: center;
+
+				.left,
+				.right {
+					text-align: center;
+				}
 			}
 		}
 

@@ -62,10 +62,18 @@
 			background: var(--color--callout-background);
 		}
 
+		pre {
+			max-width: 100%;
+			overflow-x: auto;
+			scrollbar-color: var(--color--primary) var(--color--primary-tint);
+			scrollbar-width: thin;
+		}
+
 		code:not([class^='language-']) {
 			background: var(--color--code-inline-background);
 			padding: 5px 10px;
 			border-radius: 5px;
+			overflow-wrap: anywhere;
 		}
 
 		code {
@@ -76,7 +84,11 @@
 	.heading-link {
 		color: var(--color--primary);
 		text-decoration: none;
-		margin-right: 10px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 44px;
+		min-height: 44px;
 	}
 
 	img {

@@ -10,6 +10,7 @@
 		target="_blank"
 		rel="me noreferrer"
 		title="Say Hi on Mastodon"
+		aria-label="Say Hi on Mastodon"
 	>
 		<MastodonIcon />
 	</a>
@@ -18,6 +19,7 @@
 		target="_blank"
 		rel="noopener noreferrer"
 		title="See my GitHub profile"
+		aria-label="See my GitHub profile"
 	>
 		<GitHubIcon />
 	</a>
@@ -26,6 +28,7 @@
 		target="_blank"
 		rel="noopener noreferrer"
 		title="Send an email"
+		aria-label="Send an email"
 	>
 		<EmailIcon />
 	</a>
@@ -36,11 +39,16 @@
 	.socials {
 		display: flex;
 		align-items: center;
-		gap: 20px;
+		gap: 4px;
 
 		a {
 			transition: all 0.2s ease-in-out;
-			width: 24px;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			flex: 0 0 44px;
+			width: 44px;
+			height: 44px;
 			color: var(--color--text);
 			fill: var(--color--text);
 

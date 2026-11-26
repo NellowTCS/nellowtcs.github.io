@@ -16,13 +16,7 @@
 	};
 </script>
 
-<svelte:element
-	this={tag}
-	class="card {additionalClass}"
-	{...linkProps}
-	data-sveltekit-preload-data
-	{...$$restProps}
->
+<svelte:element this={tag} class="card {additionalClass}" {...linkProps} {...$$restProps}>
 	{#if $$slots.image}
 		<div class="image">
 			<slot name="image" />
@@ -84,8 +78,8 @@
 
 	.image {
 		position: relative;
-		flex: 1 0 max(50%, 330px);
-		// height: min(100%, 300px);
+		flex: 1 0 50%;
+		min-width: min(330px, 100%);
 		min-height: 280px;
 		max-height: 350px;
 	}

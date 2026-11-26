@@ -15,14 +15,16 @@
 	export let cargo: string | undefined = undefined;
 </script>
 
-<Card href="/projects/{slug}" additionalClass="project-card {!coverImage ? 'no-image' : ''}">
+<Card additionalClass="project-card {!coverImage ? 'no-image' : ''}">
 	<div class="image" slot="image">
 		{#if coverImage}
 			<Image src={coverImage} alt="Cover image of this project" />
 		{/if}
 	</div>
 	<div class="content" slot="content">
-		<p class="title">{title}</p>
+		<p class="title">
+			<a href="/projects/{slug}" class="title-link" data-sveltekit-preload-data="hover">{title}</a>
+		</p>
 		{#if excerpt}
 			<p class="text">{excerpt}</p>
 		{/if}
@@ -83,6 +85,19 @@
 		font-weight: 700;
 	}
 
+	.title-link {
+		color: inherit;
+		text-decoration: none;
+
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			z-index: 1;
+			cursor: pointer;
+		}
+	}
+
 	.text {
 		margin-top: 5px;
 		font-size: 0.9rem;
@@ -97,6 +112,8 @@
 	}
 
 	.footer {
+		position: relative;
+		z-index: 2;
 		margin-top: 20px;
 		display: flex;
 		flex-direction: column;
@@ -105,14 +122,17 @@
 
 	.links {
 		display: flex;
+		flex-wrap: wrap;
 		gap: 8px;
 	}
 
 	.link {
-		display: inline-block;
-		padding: 5px 10px;
+		display: inline-flex;
+		align-items: center;
+		min-height: 44px;
+		padding: 10px 14px;
 		border-radius: 20px;
-		font-size: 0.75rem;
+		font-size: 0.8rem;
 		font-weight: 700;
 		text-decoration: none;
 		background-color: rgb(var(--color--primary-rgb));
@@ -121,6 +141,12 @@
 		&:hover {
 			opacity: 0.9;
 		}
+	}
+
+	:global(.project-card:hover),
+	:global(.project-card:focus-within) {
+		box-shadow: var(--card-shadow-hover);
+		transform: scale(1.01);
 	}
 
 	.link.secondary {

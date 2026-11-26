@@ -33,7 +33,8 @@
 
 <style lang="scss">
 	footer {
-		height: 340px;
+		min-height: calc(340px + env(safe-area-inset-bottom, 0px));
+		padding-bottom: env(safe-area-inset-bottom, 0px);
 		width: 100%;
 		background: linear-gradient(60deg, var(--color--waves-start) 0%, var(--color--waves-end) 100%);
 		display: grid;

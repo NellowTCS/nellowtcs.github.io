@@ -17,7 +17,8 @@
 		font-weight: 500;
 		font-size: 0.85rem;
 		width: fit-content;
-		white-space: nowrap;
+		max-width: 100%;
+		overflow-wrap: anywhere;
 
 		&.primary {
 			background-color: var(--color--primary-tint);

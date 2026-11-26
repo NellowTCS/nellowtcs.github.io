@@ -23,7 +23,9 @@
 
 <button
 	class="theme-toggle"
+	type="button"
 	title="Toggle between light and dark theme"
+	aria-label="Theme: {$theme}. Activate to change theme"
 	data-theme={$theme}
 	on:click={toggleTheme}
 >
@@ -50,8 +52,10 @@
 
 <style lang="scss">
 	.theme-toggle {
-		height: 24px;
-		padding: 0;
+		flex: 0 0 auto;
+		min-height: 44px;
+		min-width: 44px;
+		padding: 0 8px;
 		appearance: none;
 		border: none;
 		background: none;

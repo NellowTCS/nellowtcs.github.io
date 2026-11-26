@@ -35,7 +35,7 @@
 		text-align: center;
 
 		.svg-wrapper {
-			width: 300px;
+			width: min(300px, 100%);
 			margin-top: -60px;
 			margin-bottom: -30px;
 

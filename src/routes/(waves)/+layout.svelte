@@ -3,11 +3,11 @@
 	import Header from '#lib/components/organisms/Header.svelte';
 	import Footer from '#lib/components/organisms/Footer.svelte';
 
-	import { description, image, keywords, title, siteBaseUrl } from '#lib/data/meta';
+	import { absoluteUrl, description, image, keywords, title } from '#lib/data/meta';
 </script>
 
 <svelte:head>
-	<link rel="canonical" href={siteBaseUrl} />
+	<link rel="canonical" href={absoluteUrl()} />
 	<meta name="keywords" content={keywords.join(', ')} />
 
 	<meta name="description" content={description} />
@@ -21,7 +21,7 @@
 	<meta property="og:image" content={image} />
 	<meta name="twitter:image" content={image} />
 
-	<meta property="og:url" content={siteBaseUrl} />
+	<meta property="og:url" content={absoluteUrl()} />
 	<meta property="og:type" content="website" />
 	<meta name="twitter:card" content="summary_large_image" />
 </svelte:head>

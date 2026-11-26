@@ -6,24 +6,19 @@
 
 @mixin padded-container {
 	width: 100%;
-	padding-right: 15px;
-	padding-left: 15px;
+	padding-right: max(15px, env(safe-area-inset-right, 0px));
+	padding-left: max(15px, env(safe-area-inset-left, 0px));
 	margin-right: auto;
 	margin-left: auto;
 
-	@include for-iphone-se {
-		padding-left: 0;
-		padding-right: 0;
-	}
-
 	@include for-tablet-portrait-up {
-		padding-right: 20px;
-		padding-left: 20px;
+		padding-right: max(20px, env(safe-area-inset-right, 0px));
+		padding-left: max(20px, env(safe-area-inset-left, 0px));
 	}
 
 	@include for-tablet-landscape-up {
-		padding-right: 30px;
-		padding-left: 30px;
+		padding-right: max(30px, env(safe-area-inset-right, 0px));
+		padding-left: max(30px, env(safe-area-inset-left, 0px));
 	}
 
 	@include for-desktop-up {
@@ -46,7 +41,7 @@
 		#{color.channel($color, 'red', $space: rgb)}, #{color.channel($color, 'green', $space: rgb)},
 		#{color.channel($color, 'blue', $space: rgb)};
 
-	@if brightness($color) > 186 {
+	@if brightness($color) > 0.5 {
 		--color--#{$title}-contrast: var(--color--text);
 	} @else {
 		--color--#{$title}-contrast: var(--color--text-inverse);

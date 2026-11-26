@@ -4,6 +4,8 @@
 
 export const siteBaseUrl = 'https://nellowtcs.me/';
 
+export const absoluteUrl = (path = '') => new URL(path.replace(/^\/+/, ''), siteBaseUrl).toString();
+
 export const keywords = ['Developer', 'Projects', 'Blog', 'Web', 'Static Site'];
 
 export const description =
@@ -11,4 +13,4 @@ export const description =
 
 export const title = 'Home | NellowTCS';
 
-export const image = `${siteBaseUrl}/images/site-preview.png`;
+export const image = absoluteUrl('/images/site-preview.png');

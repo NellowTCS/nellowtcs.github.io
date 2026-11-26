@@ -45,17 +45,18 @@
 			gap: 30px;
 
 			@include for-phone-only {
-				.links {
-					a {
-						display: none;
-					}
-				}
+				flex-wrap: wrap;
+				gap: 12px;
 			}
 		}
 
 		.logo {
 			height: 44px;
 			flex: 1;
+
+			@include for-phone-only {
+				flex: 1 1 auto;
+			}
 		}
 
 		a {
@@ -67,6 +68,21 @@
 			align-items: center;
 			justify-content: flex-end;
 			gap: 30px;
+
+			@include for-phone-only {
+				width: 100%;
+				justify-content: center;
+				gap: 8px;
+			}
+
+			> a {
+				display: inline-flex;
+				align-items: center;
+				flex: 0 0 auto;
+				min-height: 44px;
+				padding: 0 12px;
+				text-decoration: none;
+			}
 
 			a {
 				text-decoration: none;

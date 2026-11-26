@@ -31,6 +31,11 @@ $breakpoint-desktop-min: 1201px;
 		@content;
 	}
 }
+@mixin for-tablet-landscape-only {
+	@media (min-width: $breakpoint-tablet-landscape-min) and (max-width: $breakpoint-tablet-landscape-max) {
+		@content;
+	}
+}
 @mixin for-tablet-landscape-down {
 	@media (max-width: $breakpoint-tablet-landscape-max) {
 		@content;
