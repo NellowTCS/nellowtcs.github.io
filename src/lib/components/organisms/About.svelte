@@ -23,7 +23,7 @@
 	<div class="image">
 		<figure>
 			<Image src="/images/frontpage.png" alt="Sample for the static template" />
-			<figcaption>HTMLPlayer v2</figcaption>
+			<figcaption>Muzari</figcaption>
 		</figure>
 	</div>
 </section>

@@ -24,4 +24,4 @@ It's a concept repo, not a code library. The README lays out the philosophy, the
 
 ## Current Status
 
-I'm currently using Curvomorphism in beta for HTMLPlayer v2. The author hedge in the README says it "guides the eye naturally to the center (i'd assume)" and I think that's fair. It's a design hypothesis more than a proven technique. But every new UI trend started as someone's weird idea, and I'd rather put mine out there than keep it in a notebook. The repo is open, the idea is documented, and if anyone wants to run with it, go for it. I just wanted to see if the concept worked. Turns out it kind of does.
+I'm currently using Curvomorphism for Muzari. The author hedge in the README says it "guides the eye naturally to the center (i'd assume)" and I think that's fair. It's a design hypothesis more than a proven technique. But every new UI trend started as someone's weird idea, and I'd rather put mine out there than keep it in a notebook. The repo is open, the idea is documented, and if anyone wants to run with it, go for it. I just wanted to see if the concept worked. Turns out it kind of does.
